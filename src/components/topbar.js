@@ -12,12 +12,12 @@ const Topbar = () => {
                     <Text fontWeight={500} color="black">Motara</Text>
                 </Flex>
 
-                <Flex align="center" justify="flex-end" w={[ "100%", "250px" ]}>
-                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6} _hover={{ color: "orange.300" }}>
+                <Flex align="center" justify="flex-end">
+                    <Link href="/" p="3" me={6} _hover={{ color: "orange.300" }}>
                         <FaShoppingBasket />
                     </Link>
                     
-                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6} _hover={{ color: "orange.300" }}>
+                    <Link href="/login" p="3" me={6} _hover={{ color: "orange.300" }}>
                         <FaUser />
                     </Link>
                     

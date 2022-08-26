@@ -1,6 +1,7 @@
-import { Flex, Input, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Link, Text, useDisclosure } from "@chakra-ui/react"
+import { Flex, Input, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Link, Text, useDisclosure, Box } from "@chakra-ui/react"
 import { useRef } from "react"
 import { FaBars, FaSearch } from "react-icons/fa";
+import SocialLinks from "./sociallinks";
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -8,7 +9,7 @@ const Navbar = () => {
 
     return(
         <>
-            <Button href="/" p="5" border="1px" me={[ "5px", "5px", 0 ]} borderColor="gray.100" borderRadius="0" onClick={onOpen}>
+            <Button href="/" p="2" border="1px" me={[ "5px", "5px", 0 ]} borderColor="gray.100" borderRadius="0" onClick={onOpen}>
                 <FaBars />
             </Button>
 
@@ -56,6 +57,11 @@ const Navbar = () => {
                                 Settings
                             </Link>
                         </Text>
+
+                        <Box p="2" mt="4">
+                            <Text fontWeight="600">Info@example.com</Text>
+                            <SocialLinks />
+                        </Box>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

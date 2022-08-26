@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Badge, Box, Button, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
 import bgsofas from "../assets/imgs/bgsofas.jpg"
 import bg from "../assets/imgs/bg.jpg"
 import Heading from "../components/heading";
@@ -83,6 +83,17 @@ const Home = () => {
                         <Button fontSize="14px" colorScheme="orange" mt="6" borderRadius="0">Shop now</Button>
                     </Box>
                     <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" />
+                </Flex>
+            </Box>
+
+            <Box bgColor="gray.100" p="5%" mb="30px" fontSize="14px">
+                <Heading mainText={"Subscribe To Our Newsletter"} />
+
+                <Flex justify="center" align="center" m="auto" w="fit-content" p="2px" bgColor="white" border="1px" borderColor="gray.300" borderRadius="0">
+                    <Input placeholder="Enter your email..." fontSize="14px" borderRadius="0" border="none" w={[ "100%", "100%", "300px" ]} />
+                    <Link href="/" bgColor="orange.300" p="3" border="1px" borderColor="orange.300" color="white">
+                        Subscribe now
+                    </Link>
                 </Flex>
             </Box>
         </Box>
