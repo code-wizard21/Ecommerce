@@ -1,33 +1,27 @@
 import { Flex, Link, Text } from "@chakra-ui/react";
-import { FaBars, FaSearch, FaShoppingBag, FaShoppingBasket, FaUser } from "react-icons/fa";
+import { FaShoppingBasket, FaShoppingCart, FaUser } from "react-icons/fa";
+import Navbar from "./navbar";
 
 const Topbar = () => {
     return (
         <nav>
-            <Flex justify="space-between" align="center" shadow="base" px={"10%"} py="15px">
-                <Flex w="10%">
-                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px">
-                        <FaSearch />
-                    </Link>
+            <Flex justify="space-between" align="center" shadow="base" px={[null, "0px", "5%", "10%"]} py="1">
+
+                <Flex align="center" color="orange.300" ps={[ "20px", null ]}>
+                    <FaShoppingCart/>
+                    <Text fontWeight={500} color="black">Motara</Text>
                 </Flex>
 
-                <Flex flexDirection="column" justify="center" align="center" color="orange.300">
-                    <FaShoppingBag/>
-                    <Text fontWeight={500} color="black">Ecommerce</Text>
-                </Flex>
-
-                <Flex>
-                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6}>
+                <Flex align="center" justify="flex-end" w={[ "100%", "250px" ]}>
+                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6} _hover={{ color: "orange.300" }}>
                         <FaShoppingBasket />
                     </Link>
                     
-                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6}>
+                    <Link href="/" bgColor="gray.100" p="2" borderRadius="30px" me={6} _hover={{ color: "orange.300" }}>
                         <FaUser />
                     </Link>
                     
-                    <Link href="/" p="2" borderRadius="5px">
-                        <FaBars />
-                    </Link>
+                    <Navbar />
                 </Flex>
             </Flex>
         </nav>
