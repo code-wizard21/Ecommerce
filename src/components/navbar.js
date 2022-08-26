@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return(
         <>
-            <Button href="/" py="5" px="6" border="1px" borderColor="gray.100" borderRadius="0" onClick={onOpen}>
+            <Button href="/" p="5" border="1px" me={[ "5px", "5px", 0 ]} borderColor="gray.100" borderRadius="0" onClick={onOpen}>
                 <FaBars />
             </Button>
 
