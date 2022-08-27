@@ -4,7 +4,7 @@ import SocialLinks from "./sociallinks";
 const Footer = () => {
     return (
         <footer>
-            <Flex justify="space-between" flexWrap="wrap" p="5% 10%" fontSize="14px" bgColor="gray.100">
+            <Flex justify="space-between" flexWrap="wrap" py="5%" px={[ "20px", "20px", "10%" ]} fontSize="14px" bgColor="gray.100">
                 <Box  w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Heading>Motara</Heading>
                     <p>Home of Unique furnitures. </p>

@@ -41,19 +41,19 @@ const Home = () => {
                 <Text fontSize="20px" fontWeight="600" textAlign="center" color="orange">CATEGORIES</Text>
                 <Flex justify="space-between" flexWrap="wrap" px={[ "10px", "20px", null ]}>
                     <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
+                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">SOFAS</Text>
                             <Text>Save <Badge colorScheme="orange">30%</Badge> now</Text>
                         </Box>
                     </Link>
                     <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
+                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">CHAIRS</Text>
                             <Text>Save <Badge colorScheme="orange">50%</Badge> now</Text>
                         </Box>
                     </Link>
                     <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
+                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">LAMPS</Text>
                             <Text>Save <Badge colorScheme="orange">20%</Badge> now</Text>
                         </Box>

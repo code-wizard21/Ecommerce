@@ -1,0 +1,4 @@
+# Redirects from what the browser requests to what we serve
+# see https://docs.netlify.com/routing/redirects/
+
+/*    /index.html   200

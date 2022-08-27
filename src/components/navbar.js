@@ -1,6 +1,7 @@
-import { Flex, Input, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Link, Text, useDisclosure, Box } from "@chakra-ui/react"
+import { Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Link, Text, useDisclosure, Box } from "@chakra-ui/react"
 import { useRef } from "react"
-import { FaBars, FaSearch } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import SearchBar from "./searchbar";
 import SocialLinks from "./sociallinks";
 
 const Navbar = () => {
@@ -20,12 +21,7 @@ const Navbar = () => {
                     <DrawerHeader>Motara Furnitures</DrawerHeader>
                     <DrawerBody fontSize="14px">
 
-                        <Flex align="center" w="100%" p="2px" my="2" border="1px" borderColor="gray.100" borderRadius="0">
-                            <Input placeholder="Search here" fontSize="14px" borderRadius="0" />
-                            <Link href="/" bgColor="gray.100" p="3" border="1px" borderColor="gray.100">
-                                <FaSearch />
-                            </Link>
-                        </Flex>
+                        <SearchBar />
 
                         <Text display="flex">
                             <Link href="/" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
