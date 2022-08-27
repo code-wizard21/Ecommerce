@@ -6,6 +6,7 @@ import Home from "../views/index";
 import Login from "../views/login";
 import Register from "../views/register";
 import Shop from "../views/shop";
+import Cart from "../views/cart";
 
 
 const RoutesProvider = () => {
@@ -17,6 +18,7 @@ const RoutesProvider = () => {
                 <Route path="/login" exact element={<Login />} />
                 <Route path="/register" exact element={<Register />} />
                 <Route path="/shop" exact element={<Shop />} />
+                <Route path="/cart" exact element={<Cart />} />
             </Routes>
             <MobileBottombar />
             <Footer />

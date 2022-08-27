@@ -18,7 +18,7 @@ const Topbar = () => {
                 </Box>
 
                 <Flex align="center" justify="flex-end" w="22%">
-                    <Link href="/" p="3" me={3} _hover={{ color: "orange.300" }}>
+                    <Link href="/cart" p="3" me={3} _hover={{ color: "orange.300" }}>
                         <FiShoppingCart />
                     </Link>
                     
