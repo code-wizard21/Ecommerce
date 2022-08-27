@@ -20,7 +20,7 @@ const Navbar = () => {
                     <DrawerHeader>Motara Furnitures</DrawerHeader>
                     <DrawerBody fontSize="14px">
 
-                        <Flex align="center" w={[ "100%", "250px" ]} p="2px" border="1px" borderColor="gray.100" borderRadius="0">
+                        <Flex align="center" w="100%" p="2px" my="2" border="1px" borderColor="gray.100" borderRadius="0">
                             <Input placeholder="Search here" fontSize="14px" borderRadius="0" />
                             <Link href="/" bgColor="gray.100" p="3" border="1px" borderColor="gray.100">
                                 <FaSearch />
@@ -38,18 +38,18 @@ const Navbar = () => {
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
+                            <Link href="/shop" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
                                 Shop
                             </Link>
                         </Text>
                         <Text display="flex">
                             <Link href="/" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
-                                Categories
+                                Wishlist
                             </Link>
                         </Text>
                         <Text display="flex">
                             <Link href="/" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
-                                Wishlists
+                                Dashboard
                             </Link>
                         </Text>
                         <Text display="flex">

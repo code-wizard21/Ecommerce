@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
 import bgsofas from "../assets/imgs/bgsofas.jpg"
 import bg from "../assets/imgs/bg.jpg"
 import Heading from "../components/heading";
@@ -10,14 +10,14 @@ import { products } from "../data/products";
 const Home = () => {
 
     return (
-        <Box px={[ null, "0", "5%", "10%" ]}>
+        <Box>
             <Flex justify="flex-end" align="center" position="relative">
-                <Box w={[ null, "100%", "40%" ]} position="absolute" left="0" p="5%" ps={[ "5%", "5%", 0 ]} top={[ "30px", "30px", "auto" ]} bgColor={[ "blackAlpha.300", "blackAlpha.300", "whiteAlpha.700"]} color={[ "white", "white", "black" ]}>
-                    <Text fontSize="40px" fontWeight="700" pb="5%" >Minimalistic and Modern Interior.</Text>
-                    <Text fontSize="14px" fontWeight="600">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
-                    <Button fontSize="14px" colorScheme="orange" mt="6" borderRadius="0">Shop now</Button>
+                <Box w={[ null, "100%", "40%" ]} position="absolute" left={["0", "0", "10%"]} p="5%" ps={[ "5%", "5%", 0 ]} top={[ "0", "0", "auto" ]} bgColor={[ "blackAlpha.300", "blackAlpha.300", "whiteAlpha.700"]} color={[ "white", "white", "black" ]}>
+                    <Text fontSize="40px" fontWeight="700" pb="15px" >Minimalistic and Modern Interior.</Text>
+                    <Text fontSize="14px" fontWeight="600" mb="35px">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
+                    <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="orange.300" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                 </Box>
-                <Image src={bgsofas} w={[ "100%", "100%", "80%"]} minHeight={[ "500px", null ]} objectFit="cover"/>
+                <Image src={bgsofas} w={[ "100%", "100%", "70%"]} minHeight={[ "500px", null ]} objectFit="cover"/>
             </Flex>
 
             <Box p={[ "10px", "40px"]} bgColor="gray.100">
@@ -37,23 +37,23 @@ const Home = () => {
                 </Flex>
             </Box>
 
-            <Box fontSize="14px">
-                <Heading mainText={"CATEGORIES"} />
+            <Box fontSize="14px" px={[ null, "0", "5%", "10%" ]} m="10% 0 50px 0">
+                <Text fontSize="20px" fontWeight="600" textAlign="center" color="orange">CATEGORIES</Text>
                 <Flex justify="space-between" flexWrap="wrap" px={[ "10px", "20px", null ]}>
-                    <Link href="#" p="5%" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="2" bgColor="blackAlpha.700">
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">SOFAS</Text>
                             <Text>Save <Badge colorScheme="orange">30%</Badge> now</Text>
                         </Box>
                     </Link>
-                    <Link href="#" p="5%" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="2" bgColor="blackAlpha.700">
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">CHAIRS</Text>
                             <Text>Save <Badge colorScheme="orange">50%</Badge> now</Text>
                         </Box>
                     </Link>
-                    <Link href="#" p="5%" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="2" bgColor="blackAlpha.700">
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box color="white" p="50px 5%" bgColor="blackAlpha.700">
                             <Text fontWeight="600" color="orange.300" mb="20px">LAMPS</Text>
                             <Text>Save <Badge colorScheme="orange">20%</Badge> now</Text>
                         </Box>
@@ -61,7 +61,7 @@ const Home = () => {
                 </Flex>
             </Box>
 
-            <Box py="5%">
+            <Box py="5%" px={[ null, "0", "5%", "10%" ]}>
                 <Heading mainText={"HOT DEALS FOR YOU"} subText={"Our customers most loved products you can also get."} />
 
                 <Flex justify="space-between" flexWrap="wrap">
@@ -75,12 +75,12 @@ const Home = () => {
                 </Flex>
             </Box>
 
-            <Box py="5%" my="5%">
+            <Box py="5%" px={[ null, "0", "5%", "10%" ]} my="5%">
                 <Flex justify="space-between" flexWrap="wrap">
                     <Box w={[ null, "100%", "40%" ]} p="5%" ps={[ "5%", "5%", 0 ]}>
-                        <Text fontSize={[ "20px", "30px", "40px"]} fontWeight="700" pb="5%" >Artistic Designs with unique shapes.</Text>
-                        <Text fontSize="14px" fontWeight="600">Purpose of a furniture is to keep you comfortable while also beautifying your home</Text>
-                        <Button fontSize="14px" colorScheme="orange" mt="6" borderRadius="0">Shop now</Button>
+                        <Text fontSize={[ "20px", "30px" ]} fontWeight="700" pb="15px" >Artistic Designs with unique shapes.</Text>
+                        <Text fontSize="14px" fontWeight="600" mb="35px">Purpose of a furniture is to keep you comfortable while also beautifying your home</Text>
+                        <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="orange.300" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                     </Box>
                     <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" />
                 </Flex>

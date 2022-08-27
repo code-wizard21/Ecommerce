@@ -62,7 +62,7 @@ const Register = () => {
                     </Flex>
                 </FormControl>
 
-                <Button fontSize="14px" borderRadius="2px" border="1px solid orange" colorScheme="orange" w="100%" mt="6">Sign up</Button>
+                <Button fontSize="14px" borderRadius="2px" border="1px solid orange" bgColor="orange.300" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Sign up</Button>
 
                 <Text mt="4">Already have an account? <Link href="/login" color="orange.300">Login</Link></Text>
             </Box>

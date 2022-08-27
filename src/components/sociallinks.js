@@ -7,16 +7,16 @@ const SocialLinks = () => {
             <Link href="https://facebook.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
                 <FaFacebook />
             </Link>
-            <Link href="https://facebook.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
+            <Link href="https://twitter.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
                 <FaTwitter />
             </Link>
-            <Link href="https://facebook.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
+            <Link href="https://instagram.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
                 <FaInstagram />
             </Link>
-            <Link href="https://facebook.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
+            <Link href="https://youtube.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
                 <FaYoutube />
             </Link>
-            <Link href="https://facebook.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
+            <Link href="https://linkedin.com" p="2" bgColor="gray.600" color="white" me="2" borderRadius="2px" _hover={{ bgColor: "orange.300" }}>
                 <FaLinkedin />
             </Link>
         </Flex>

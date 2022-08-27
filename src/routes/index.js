@@ -5,6 +5,7 @@ import Topbar from "../components/topbar";
 import Home from "../views/index";
 import Login from "../views/login";
 import Register from "../views/register";
+import Shop from "../views/shop";
 
 
 const RoutesProvider = () => {
@@ -15,6 +16,7 @@ const RoutesProvider = () => {
                 <Route path="/" exact element={<Home />} />
                 <Route path="/login" exact element={<Login />} />
                 <Route path="/register" exact element={<Register />} />
+                <Route path="/shop" exact element={<Shop />} />
             </Routes>
             <MobileBottombar />
             <Footer />
