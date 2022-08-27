@@ -23,7 +23,7 @@ const Navbar = () => {
 
                         <SearchBar />
 
-                        <Text display="flex">
+                        <Text display="flex" mt="3">
                             <Link href="/" p="2" w="100%" _hover={{ bgColor: 'orange.300', color: "white" }}>
                                 Home
                             </Link>

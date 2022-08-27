@@ -1,6 +1,9 @@
 import { Badge, Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
 import bgsofas from "../assets/imgs/bgsofas.jpg"
 import bg from "../assets/imgs/bg.jpg"
+import bg1 from "../assets/imgs/bg1.png"
+import bg2 from "../assets/imgs/bg2.png"
+import bg3 from "../assets/imgs/bg3.png"
 import Heading from "../components/heading";
 import { FaMapMarkerAlt, FaPhone, FaEnvelopeSquare } from "react-icons/fa"
 import Product from "../components/product";
@@ -37,24 +40,24 @@ const Home = () => {
                 </Flex>
             </Box>
 
-            <Box fontSize="14px" px={[ null, "0", "5%", "10%" ]} m="10% 0 50px 0">
+            <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
                 <Text fontSize="20px" fontWeight="600" textAlign="center" color="orange">CATEGORIES</Text>
                 <Flex justify="space-between" flexWrap="wrap" px={[ "10px", "20px", null ]}>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
-                            <Text fontWeight="600" color="orange.300" mb="20px">SOFAS</Text>
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg1})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box p="50px" w="100%">
+                            <Text fontWeight="600" mb="20px">CHAIRS</Text>
                             <Text>Save <Badge colorScheme="orange">30%</Badge> now</Text>
                         </Box>
                     </Link>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
-                            <Text fontWeight="600" color="orange.300" mb="20px">CHAIRS</Text>
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg2})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box p="50px" w="100%">
+                            <Text fontWeight="600" mb="20px">TV STANDS</Text>
                             <Text>Save <Badge colorScheme="orange">50%</Badge> now</Text>
                         </Box>
                     </Link>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bgsofas})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box color="white" p="50px" w="100%" bgColor="blackAlpha.700">
-                            <Text fontWeight="600" color="orange.300" mb="20px">LAMPS</Text>
+                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg3})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
+                        <Box p="50px" w="100%">
+                            <Text fontWeight="600" mb="20px">SOFAS</Text>
                             <Text>Save <Badge colorScheme="orange">20%</Badge> now</Text>
                         </Box>
                     </Link>
@@ -91,8 +94,8 @@ const Home = () => {
 
                 <Flex justify="center" align="center" m="auto" w="fit-content" p="2px" bgColor="white" border="1px" borderColor="gray.300" borderRadius="0">
                     <Input placeholder="Enter your email..." fontSize="14px" borderRadius="0" border="none" w={[ "100%", "100%", "300px" ]} />
-                    <Link href="/" bgColor="orange.300" p="3" border="1px" borderColor="orange.300" color="white">
-                        Subscribe now
+                    <Link href="/" bgColor="orange.300" p="10px 25px" border="1px" borderColor="orange.300" color="white">
+                        Subscribe
                     </Link>
                 </Flex>
             </Box>

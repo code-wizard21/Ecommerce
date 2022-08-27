@@ -1,5 +1,5 @@
 import { Badge, Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import { FaHeart } from "react-icons/fa";
+import { FiHeart } from "react-icons/fi";
 
 const Product = ({ product }) => {
     return (
@@ -8,13 +8,13 @@ const Product = ({ product }) => {
             <Image w="100%" src={product.thumbnail} alt="product" p="4" />
             <Box p="2" fontSize="14px">
                 <Flex px="5px" align="center">
-                    <Text fontSize="18px" fontWeight="700" me="10px">${product.price}</Text>
+                    <Text fontSize="16px" fontWeight="600" me="10px">${product.price}</Text>
                     <Badge colorScheme="gray" textDecoration="line-through">$200</Badge>
                 </Flex>
                 <Text my="20px" p="3px 6px" >{product.title}</Text>
                 <Flex>
                     <Button flex="1" fontSize="14px" bgColor="gray.100" borderRadius="0">Add</Button>
-                    <Button  fontSize="14px" bgColor="gray.100" borderRadius="0" ms="1"><FaHeart /></Button>
+                    <Button  fontSize="14px" bgColor="gray.100" borderRadius="0" ms="1"><FiHeart /></Button>
                 </Flex>
             </Box>
         </Box>
