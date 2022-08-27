@@ -10,15 +10,15 @@ const Navbar = () => {
 
     return(
         <>
-            <Button href="/" p="2" border="1px" me={[ "5px", "5px", 0 ]} borderColor="gray.100" borderRadius="0" onClick={onOpen}>
+            <Button href="/" p="2" border="1px" me={[ "7px", "5px", 0 ]} borderColor="gray.100" borderRadius="0" onClick={onOpen}>
                 <FaBars />
             </Button>
 
             <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton py="5" px="6" border="1px" borderColor="gray.100" borderRadius="0" />
-                    <DrawerHeader>Motara Furnitures</DrawerHeader>
+                    <DrawerCloseButton py="4" px="5" m="3" border="1px" borderColor="gray.100" borderRadius="0" />
+                    <DrawerHeader  m="2">Motara Furnitures</DrawerHeader>
                     <DrawerBody fontSize="14px">
 
                         <SearchBar />
