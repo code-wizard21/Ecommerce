@@ -54,7 +54,7 @@ const Shop = () => {
                 </Slider>
             </Box>
 
-            <Flex m="5% 10%">
+            <Flex m="5% 20px">
                 <Box>
                     <Flex justify="space-between" flexWrap="wrap">
                     {

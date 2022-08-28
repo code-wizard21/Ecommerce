@@ -13,7 +13,7 @@ const MobileBottombar = () => {
     }
 
     return (
-        <Flex justify="space-between" align="center" p="5px 10px" bgColor="white" borderColor="gray.100" w="100%" display={[ "flex", "flex", "none" ]} position="fixed" left="0" bottom="0" shadow="dark-lg">
+        <Flex justify="space-between" align="center" p="5px 10px" bgColor="white" borderColor="gray.100" w="100%" display={[ "flex", "flex", "none" ]} position="fixed" left="0" bottom="0" boxShadow="0 5px 10px black">
             <Link href="/login" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/login" || location === "/register" )? active : { color: ""} }><FiUser /></Link>
             <Link href="/shop" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/shop")? active  : { color: "" } }><FaStoreAlt /></Link>
             <Link href="/" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/")? active : { color: ""} }><FiHome /></Link>
