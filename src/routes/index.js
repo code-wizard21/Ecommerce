@@ -7,6 +7,7 @@ import Login from "../views/login";
 import Register from "../views/register";
 import Shop from "../views/shop";
 import Cart from "../views/cart";
+import Checkout from "../views/checkout";
 
 
 const RoutesProvider = () => {
@@ -19,6 +20,7 @@ const RoutesProvider = () => {
                 <Route path="/register" exact element={<Register />} />
                 <Route path="/shop" exact element={<Shop />} />
                 <Route path="/cart" exact element={<Cart />} />
+                <Route path="/checkout" exact element={<Checkout />} />
             </Routes>
             <MobileBottombar />
             <Footer />
