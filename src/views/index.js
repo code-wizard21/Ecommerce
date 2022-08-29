@@ -64,6 +64,7 @@ const Home = () => {
                 </Flex>
             </Box>
 
+            
             <Box py="5%" px={[ null, "0", "5%", "10%" ]}>
                 <Heading mainText={"HOT DEALS FOR YOU"} subText={"Our customers most loved products you can also get."} />
 
