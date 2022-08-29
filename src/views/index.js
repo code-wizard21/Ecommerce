@@ -1,5 +1,7 @@
 import { Badge, Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
-import bgsofas from "../assets/imgs/bgsofas.jpg"
+import bgsofas1 from "../assets/imgs/bgsofas.webp"
+import bgsofas2 from "../assets/imgs/bgsofas1.webp"
+import bgsofas3 from "../assets/imgs/bgsofas3.webp"
 import bg from "../assets/imgs/bg.jpg"
 import bg1 from "../assets/imgs/bg1.jpg"
 import bg2 from "../assets/imgs/bg2.jpg"
@@ -8,19 +10,38 @@ import Heading from "../components/heading";
 import Product from "../components/product";
 import { products } from "../data/products";
 import { FiAlertOctagon, FiHeadphones, FiTruck } from "react-icons/fi";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 const Home = () => {
+    var settings = {
+        autoplay: true,
+        autoplaySpeed: 4000,
+        slidesToShow: 1,
+        dots: true,
+        slidesToScroll: 1,
+        speed: 500,
+        initialSlide: 2,
+        infinite: true
+    }
 
     return (
         <Box>
             <Flex justify="flex-end" align="center" position="relative">
+                <Box w={[ "100%", "100%", "70%"]} >
+                    <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
+                    </Slider>
+                </Box>
                 <Box w={[ null, "100%", "40%" ]} position="absolute" left={["0", "0", "10%"]} p="5%" ps={[ "5%", "5%", 0 ]} top={[ "0", "0", "auto" ]} bgColor={[ "blackAlpha.300", "blackAlpha.300", "whiteAlpha.700"]} color={[ "white", "white", "black" ]}>
                     <Text fontSize="40px" fontWeight="700" pb="15px" >Minimalistic and Modern Interior.</Text>
                     <Text fontSize="14px" fontWeight="600" mb="35px">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
                     <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="orange.300" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                 </Box>
-                <Image src={bgsofas} w={[ "100%", "100%", "70%"]} minHeight={[ "500px", null ]} objectFit="cover"/>
             </Flex>
 
             <Box p={[ "10px", "40px"]} bgColor="gray.100">
@@ -64,7 +85,7 @@ const Home = () => {
                 </Flex>
             </Box>
 
-            
+
             <Box py="5%" px={[ null, "0", "5%", "10%" ]}>
                 <Heading mainText={"HOT DEALS FOR YOU"} subText={"Our customers most loved products you can also get."} />
 
