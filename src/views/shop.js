@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text } from "@chakra-ui/react"
+import { Badge, Box, Flex, Link, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -34,21 +34,18 @@ const Shop = () => {
             <Box justify="center" w="100%">
                 <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg1})`} backgroundSize="cover" bgPosition="50%, 75%">
-                        <Box float="right" p="30px" fontSize="0.8rem" w={["100%", "80%", "80%", "60%"]}>
+                        <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
                             <Text mb="30px" fontSize="20px" fontWeight="700">Get as low as 60% discount on our chairs</Text>
-                            <Link p="10px 20px" border="1px solid black">SHOP NOW</Link>
                         </Box>
                     </Box>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg2})`} backgroundSize="cover" bgPosition="50%, 75%">
-                        <Box p="30px" fontSize="0.8rem" w={["100%", "80%", "80%", "60%"]}>
-                            <Text mb="30px" fontSize="25px" fontWeight="700" color="green.500">Free delivery when you purchase our Tv stands</Text>
-                            <Link p="10px 20px" border="1px solid black">SHOP NOW</Link>
+                        <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
+                            <Text mb="30px" fontSize="20px" fontWeight="700">Free delivery when you purchase our Tv stands</Text>
                         </Box>
                     </Box>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg3})`} backgroundSize="cover" bgPosition="50%, 75%">
-                        <Box p="30px" fontSize="0.8rem" w={["100%", "80%", "80%", "60%"]}>
-                            <Text mb="30px" fontSize="25px" fontWeight="700" color="purple.500">Flash sales ongoing for our sofa collections</Text>
-                            <Link p="10px 20px" border="1px solid black">SHOP NOW</Link>
+                        <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
+                            <Text mb="30px" fontSize="20px" fontWeight="700">Flash sales ongoing for our sofa collections</Text>
                         </Box>
                     </Box>
                 </Slider>

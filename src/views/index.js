@@ -5,9 +5,9 @@ import bg1 from "../assets/imgs/bg1.jpg"
 import bg2 from "../assets/imgs/bg2.jpg"
 import bg3 from "../assets/imgs/bg3.jpg"
 import Heading from "../components/heading";
-import { FaMapMarkerAlt, FaPhone, FaEnvelopeSquare } from "react-icons/fa"
 import Product from "../components/product";
 import { products } from "../data/products";
+import { FiAlertOctagon, FiHeadphones, FiTruck } from "react-icons/fi";
 
 
 const Home = () => {
@@ -26,39 +26,39 @@ const Home = () => {
             <Box p={[ "10px", "40px"]} bgColor="gray.100">
                 <Flex justify="space-around" flexWrap="wrap">
                     <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
-                        <FaMapMarkerAlt />
-                        <Text px="2" color="black" fontWeight="600">1, Houston Str</Text>
+                        <FiTruck style={{ fontSize:"30px" }} />
+                        <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
                     </Link>
                     <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
-                        <FaPhone />
-                        <Text px="2" color="black" fontWeight="600">+012 3456 789</Text>
+                        <FiHeadphones style={{ fontSize:"30px" }}  />
+                        <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
                     </Link>
                     <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
-                        <FaEnvelopeSquare />
-                        <Text px="2" color="black" fontWeight="600">Info@example.com</Text>
+                        <FiAlertOctagon style={{ fontSize:"30px" }}  />
+                        <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
                     </Link>
                 </Flex>
             </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
                 <Text fontSize="20px" fontWeight="600" textAlign="center" color="orange">CATEGORIES</Text>
-                <Flex justify="space-between" flexWrap="wrap" px={[ "10px", "20px", null ]}>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg1})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box p="50px" w="100%">
-                            <Text fontWeight="600" mb="20px">CHAIRS</Text>
-                            <Text>Save <Badge colorScheme="orange">30%</Badge> now</Text>
+                <Flex justify="space-between" flexWrap="wrap" px={[ "20px", "20px", null ]}>
+                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
+                        <Box p="50px">
+                            <Text fontWeight="600">SOFA</Text>
+                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 30%</Badge></Text>
                         </Box>
                     </Link>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg2})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box p="50px" w="100%">
-                            <Text fontWeight="600" mb="20px">TV STANDS</Text>
-                            <Text>Save <Badge colorScheme="orange">50%</Badge> now</Text>
+                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg2})`} bgSize="cover" my={[ "15px", null ]}>
+                        <Box p="50px">
+                            <Text fontWeight="600">NEW ARRIVAL</Text>
+                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 50%</Badge></Text>
                         </Box>
                     </Link>
-                    <Link href="#" w={[ "100%", "48%", "32%" ]} backgroundImage={`url(${bg3})`} bgSize="cover" display="flex" alignItems="stretch" my={[ "15px", null ]}>
-                        <Box p="50px" w="100%">
-                            <Text fontWeight="600" mb="20px">SOFAS</Text>
-                            <Text>Save <Badge colorScheme="orange">20%</Badge> now</Text>
+                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg3})`} bgSize="cover" my={[ "15px", null ]}>
+                        <Box p="50px">
+                            <Text fontWeight="600">CHAIR</Text>
+                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 20%</Badge></Text>
                         </Box>
                     </Link>
                 </Flex>
