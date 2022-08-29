@@ -5,6 +5,8 @@ import { FaHandPointDown, FaMinus, FaPlus } from "react-icons/fa";
 import { FiTrash } from "react-icons/fi";
 
 const Cart = () => {
+
+
     return (
         <Box py="50px" px={[ "20px", "20px", "10%" ]}>
             <Heading mainText={"MY CART"} subText={"Finish up the order and get a reward."} />
@@ -21,9 +23,9 @@ const Cart = () => {
                                 <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
                                     <Text fontSize="18px" fontWeight="bold">$120.00</Text>
                                     <Flex justify="flex-end" mt="10px">
-                                        <Button borderColor="gray.100" borderRadius="0" p="2"><FaPlus /></Button>
-                                        <Input type="number" borderColor="gray.100" borderRadius="0" w="60px" readOnly={true} value="20"/>
-                                        <Button borderColor="gray.100" borderRadius="0" p="2"><FaMinus /></Button>
+                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
+                                        <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
+                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
                                     </Flex>
                                 </Flex>
                             </Box>
@@ -37,9 +39,9 @@ const Cart = () => {
                                 <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
                                     <Text fontSize="18px" fontWeight="bold">$120.00</Text>
                                     <Flex justify="flex-end" mt="10px">
-                                        <Button borderColor="gray.100" borderRadius="0" p="2"><FaPlus /></Button>
-                                        <Input type="number" borderColor="gray.100" borderRadius="0" w="60px" />
-                                        <Button borderColor="gray.100" borderRadius="0" p="2"><FaMinus /></Button>
+                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
+                                        <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
+                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
                                     </Flex>
                                 </Flex>
                             </Box>

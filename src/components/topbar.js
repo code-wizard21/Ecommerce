@@ -7,8 +7,7 @@ import SearchBar from "./searchbar";
 const Topbar = () => {
     const location = useLocation().pathname;
     const active = {
-        color: "white",
-        backgroundColor: "#f6ad55"
+        color: "#f6ad55"
     }
 
     return (

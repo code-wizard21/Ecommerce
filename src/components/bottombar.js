@@ -1,24 +1,38 @@
-import { Flex, Link } from "@chakra-ui/react";
+import { Flex, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { FaStoreAlt } from "react-icons/fa";
-import { FiBell, FiHeart, FiHome, FiUser } from "react-icons/fi"
+import { FiBell, FiHeart, FiHome, FiSearch } from "react-icons/fi"
 import { useLocation } from "react-router-dom";
+import SearchBar from "./searchbar";
 
 
 const MobileBottombar = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const location = useLocation().pathname;
 
     const active = {
-        color: "white",
-        backgroundColor: "#f6ad55"
+        color: "#f6ad55",
+        backgroundColor: "rgb(246, 173, 76, 0.3)"
     }
 
     return (
-        <Flex justify="space-between" align="center" p="5px 10px" bgColor="white" borderColor="gray.100" w="100%" display={[ "flex", "flex", "none" ]} position="fixed" left="0" bottom="0" boxShadow="0 5px 10px black">
-            <Link href="/login" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/login" || location === "/register" )? active : { color: ""} }><FiUser /></Link>
-            <Link href="/shop" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/shop")? active  : { color: "" } }><FaStoreAlt /></Link>
-            <Link href="/" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/")? active : { color: ""} }><FiHome /></Link>
-            <Link href="/" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/notifications")? active : { color: ""}}><FiBell /></Link>
-            <Link href="/" p="15px 20px" fontSize="20px" borderRadius="5px" _hover={{ bgColor: "orange.300", color: "white" }} style={ (location === "/wishlist")? active : { color: ""} }><FiHeart /></Link>
+        <Flex justify="space-between" align="center" p="5px 12px" bgColor="white" borderColor="gray.100" w="100%" display={[ "flex", "flex", "none" ]} position="fixed" left="0" bottom="0" boxShadow="0 5px 10px black">
+
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Search</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <SearchBar />
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
+            <Text onClick={onOpen} p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "#")? active : { color: ""} }><FiSearch /></Text>
+
+            <Link href="/shop" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/shop")? active  : { color: "" } }><FaStoreAlt /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/")? active : { color: ""} }><FiHome /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/notifications")? active : { color: ""}}><FiBell /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/wishlist")? active : { color: ""} }><FiHeart /></Link>
         </Flex>
     )
 }

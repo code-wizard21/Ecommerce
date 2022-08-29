@@ -1,4 +1,4 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Flex, Input, Text } from "@chakra-ui/react"
+import { Box, Flex, Input, Link, Select, Text } from "@chakra-ui/react"
 import Heading from "../components/heading";
 
 const Checkout= () => {
@@ -9,44 +9,88 @@ const Checkout= () => {
             <Flex flexWrap="wrap">
                 <Box w={["100%", "100%", "60%"]} fontSize="14px" >
                     <Box p="20px" bgColor="#f3f3f3">
-                    <Text fontWeight="700" fontSize="18px" mb="3" color="orange.300">ORDER NOW</Text>
-                    <Accordion defaultIndex={[0]} allowMulitple>
-                        <AccordionItem>
-                            <h2>
-                            <AccordionButton>
-                                <Box flex="1" textAlign="left" cursor="pointer">Personal Details</Box>
-                            </AccordionButton>
-                            <AccordionPanel pb={4}>
-                                <Input placeholder="Fullname" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Email Address" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Company (optional)" my="1" fontSize="14px" borderRadius="0" />
-                            </AccordionPanel>
-                            </h2>
-                        </AccordionItem>
+                    <Text fontWeight="700" fontSize="18px" mb="3" p="2" color="orange.300">ORDER NOW</Text>
+                    <form method="post" action="/">
+                        <Box bgColor="white" p="10px">
+                            <Box>
+                                <h2>
+                                    <Box flex="1" p="3" textAlign="left" cursor="pointer">Personal Details</Box>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Fullname:</Text>
+                                        <Input py="30px" pb="15px" type="text" name="fullname" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Email address:</Text>
+                                        <Input py="30px" pb="15px" type="text" name="email" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Company (optional):</Text>
+                                        <Input py="30px" pb="15px" type="text" name="company" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                </h2>
+                            </Box>
 
-                        <AccordionItem>
-                            <h2>
-                            <AccordionButton>
-                                <Box flex="1" textAlign="left">Shipping Details</Box>
-                            </AccordionButton>
-                            <AccordionPanel pb={4}>
-                                <Input placeholder="Shipping Address" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Email Address" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Address" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="State" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Local Government" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Zip code" my="1" fontSize="14px" borderRadius="0" />
-                                <Input placeholder="Phone number" my="1" fontSize="14px" borderRadius="0" />
-                            </AccordionPanel>
-                            </h2>
-                        </AccordionItem>
-                    </Accordion>
-
+                            <Box my="4">
+                                <h2>
+                                    <Box flex="1" p="3" textAlign="left">Shipping Details</Box>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Shipping address:</Text>
+                                        <Input py="30px" pb="15px" type="text" name="address" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >State:</Text>
+                                        <Input py="30px" pb="15px" type="text" name="state" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                    <Select type="text" name="city" placeholder="Local Government" my="1" fontSize="14px" borderRadius="0">
+                                        <option>Ikeja</option>
+                                    </Select>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Zip code:</Text>
+                                        <Input py="30px" pb="15px" type="number" name="zip" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                    <Flex position="relative">
+                                        <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Phone number:</Text>
+                                        <Input py="30px" pb="15px" type="tel" name="phone" my="1" fontSize="14px" borderRadius="0" />
+                                    </Flex>
+                                </h2>
+                            </Box>
+                        </Box>
+                    </form>
                     </Box>
                 </Box>
 
-                <Box w={["100%", "100%", "36%"]} border="1px solid #f4f4f4" fontSize="14px" p="20px" mx="2%" >
-                    
+                <Box w={["100%", "100%", "36%"]} border="1px solid #f4f4f4" fontSize="14px" p="20px" mx={[0, 0, "2%"]} >
+                    <Box>
+                        <Flex position="relative">
+                            <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Name on card:</Text>
+                            <Input py="30px" pb="15px" type="text" name="cardName" my="1" fontSize="14px" borderRadius="0" />
+                        </Flex>
+                        <Flex position="relative">
+                            <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Card number:</Text>
+                            <Input py="30px" pb="15px" type="text" name="CardNumber" my="1" fontSize="14px" borderRadius="0" />
+                        </Flex>
+                        <Select name="type" borderRadius="0">
+                            <option>Visa</option>
+                            <option>Mastercard</option>
+                            <option>American Express</option>
+                        </Select>
+                        <Flex>
+                            <Flex position="relative" w="100%">
+                                <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >Expiry date:</Text>
+                                <Input py="30px" pb="15px" type="text" name="expiry" my="1" fontSize="14px" borderRadius="0" me="1" />
+                            </Flex>
+                            <Flex position="relative">
+                                <Text fontSize="12px" color="gray.400" position="absolute" top="7px" left="17px" >CVV:</Text>
+                                <Input py="30px" pb="15px" type="text" name="cvv" my="1" fontSize="14px" borderRadius="0" />
+                            </Flex>
+                        </Flex>
+                        
+                    </Box>
+
+                    <Flex m="20px 0" bgColor="white" p="10px 0">
+                        <Link href="/order" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="orange.300">Place order</Link>
+                    </Flex>
+
                 </Box>
             </Flex>
         </Box>

@@ -1,9 +1,9 @@
 import { Badge, Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
 import bgsofas from "../assets/imgs/bgsofas.jpg"
 import bg from "../assets/imgs/bg.jpg"
-import bg1 from "../assets/imgs/bg1.png"
-import bg2 from "../assets/imgs/bg2.png"
-import bg3 from "../assets/imgs/bg3.png"
+import bg1 from "../assets/imgs/bg1.jpg"
+import bg2 from "../assets/imgs/bg2.jpg"
+import bg3 from "../assets/imgs/bg3.jpg"
 import Heading from "../components/heading";
 import { FaMapMarkerAlt, FaPhone, FaEnvelopeSquare } from "react-icons/fa"
 import Product from "../components/product";
