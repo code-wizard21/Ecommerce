@@ -1,4 +1,4 @@
-import { Box, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Link } from "@chakra-ui/react";
 import { FiShoppingBag, FiShoppingCart, FiUser } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
@@ -16,7 +16,7 @@ const Topbar = () => {
 
                 <Flex align="center" w="15%" color="orange.300" ps={[ "20px", "20px", 0 ]}>
                     <FiShoppingBag/>
-                    <Text fontWeight={500} color="black" ms="2">Motara</Text>
+                    <Link href="/" fontWeight={500} color="black" ms="2">Motara</Link>
                 </Flex>
 
                 <Box flex="1" display={[ "none", "none", "flex" ]}>

@@ -98,7 +98,7 @@ const Footer = () => {
                 </Box>
             </Flex>
 
-            <Flex justify="space-between" p="20px 10%" bgColor="gray.400"color="white" fontSize="14px">
+            <Flex mb={[ "10%", "10%", 0 ]} justify="space-between" p="20px 10%" bgColor="gray.400"color="white" fontSize="14px">
                 <Text>Designed by Abel</Text>
                 <Text>Copyright &copy; { new Date().getFullYear() }</Text>
             </Flex>

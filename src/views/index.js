@@ -32,9 +32,9 @@ const Home = () => {
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
                     <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%"></Box>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                     </Slider>
                 </Box>
                 <Box w={[ null, "100%", "40%" ]} position="absolute" left={["0", "0", "10%"]} p="5%" ps={[ "5%", "5%", 0 ]} top={[ "0", "0", "auto" ]} bgColor={[ "blackAlpha.300", "blackAlpha.300", "whiteAlpha.700"]} color={[ "white", "white", "black" ]}>
