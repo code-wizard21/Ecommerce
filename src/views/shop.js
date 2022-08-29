@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
