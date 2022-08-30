@@ -1,14 +1,17 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { Badge, Box, Flex, Link } from "@chakra-ui/react";
 import { FiShoppingBag, FiShoppingCart, FiUser } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
 import SearchBar from "./searchbar";
+import { useSelector } from "react-redux";
 
 const Topbar = () => {
     const location = useLocation().pathname;
+    const cart = useSelector((state) => state.data.cart)
     const active = {
         color: "rgb(228, 99, 13)"
     }
+    
 
     return (
         <nav>
@@ -24,8 +27,8 @@ const Topbar = () => {
                 </Box>
 
                 <Flex align="center" justify="flex-end" w="22%">
-                    <Link href="/cart" p="2" me={3} style={ (location === "/cart") ? active : {color:""} } _hover={{ color: "rgb(228, 99, 13)" }} title="cart">
-                        <FiShoppingCart />
+                    <Link href="/cart" p="2" me={3} position="relative" style={ (location === "/cart") ? active : {color:""} } _hover={{ color: "rgb(228, 99, 13)" }} title="cart">
+                        <FiShoppingCart /><Badge colorScheme="orange" position="absolute" top="0" right="-5px">{cart.length}</Badge>
                     </Link>
                     
                     <Link href="/login" p="2" me={6} style={ (location === "/login" || location === "/register") ? active : {color:""} } _hover={{ color: "rgb(228, 99, 13)" }} title="account">

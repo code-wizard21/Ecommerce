@@ -1,9 +1,21 @@
-import chair01 from "../assets/imgs/chairs/chair05-01.png"
-import chair02 from "../assets/imgs/chairs/chair02.png"
-import chair03 from "../assets/imgs/chairs/chair03-01.png"
-import chair04 from "../assets/imgs/chairs/chair04-01.png"
+import tvBase01_01 from "../assets/imgs/tv-base/product01-01.jpeg"
+import tvBase01_02 from "../assets/imgs/tv-base/product01-02.jpeg"
+import tvBase01_03 from "../assets/imgs/tv-base/product01-03.jpeg"
+import tvBase02_01 from "../assets/imgs/tv-base/product02-01.jpeg"
+import tvBase02_02 from "../assets/imgs/tv-base/product02-02.jpeg"
+import tvBase02_03 from "../assets/imgs/tv-base/product02-03.jpeg"
+import tvBase02_04 from "../assets/imgs/tv-base/product02-04.jpeg"
+import tvBase03_01 from "../assets/imgs/tv-base/product03-01.jpeg"
+import tvBase03_02 from "../assets/imgs/tv-base/product03-02.jpeg"
+import tvBase03_03 from "../assets/imgs/tv-base/product03-03.png"
+import tvBase03_04 from "../assets/imgs/tv-base/product03-04.png"
+import tvBase04_01 from "../assets/imgs/tv-base/product04-01.jpeg"
+import tvBase04_02 from "../assets/imgs/tv-base/product04-02.jpeg"
+import tvBase04_03 from "../assets/imgs/tv-base/product04-03.jpg"
+import tvBase04_04 from "../assets/imgs/tv-base/product04-04.jpeg"
 
-export const products = {    
+
+export const data = {
     products: [
         {
             id: 1,
@@ -24,8 +36,8 @@ export const products = {
             rating: 4.69,
             stock: 94,
             category: "Chairs",
-            thumbnail: chair01,
-            images: [ "../assets/imgs/chairs/chair01.png", "", "" ]
+            thumbnail: tvBase01_03,
+            images: [ tvBase01_02, tvBase01_01, "" ]
         },
         {
             id: 2,
@@ -46,8 +58,8 @@ export const products = {
             rating: 4.69,
             stock: 14,
             category: "Chairs",
-            thumbnail: chair02,
-            images: [ "../assets/imgs/chairs/chair02.png", "", "" ]
+            thumbnail: tvBase02_03,
+            images: [ tvBase02_01, tvBase02_02, tvBase02_04 ]
         },
         {
             id: 3,
@@ -68,8 +80,8 @@ export const products = {
             rating: 4.69,
             stock: 14,
             category: "Chairs",
-            thumbnail: chair03,
-            images: [ "../assets/imgs/chairs/chair03-01.png", "../assets/imgs/chairs/chair03-02.png", "../assets/imgs/chairs/chair03-03.png" ]
+            thumbnail: tvBase03_01,
+            images: [ tvBase03_02, tvBase03_03, tvBase03_04 ]
         },
         {
             id: 4,
@@ -90,8 +102,8 @@ export const products = {
             rating: 4.69,
             stock: 24,
             category: "Chairs",
-            thumbnail: chair04,
-            images: [ "../assets/imgs/chairs/chair03-01.png", "../assets/imgs/chairs/chair03-02.png", "../assets/imgs/chairs/chair03-03.png" ]
+            thumbnail: tvBase04_01,
+            images: [ tvBase04_02, tvBase04_03, tvBase04_04 ]
         }
     ],
     total: 15,

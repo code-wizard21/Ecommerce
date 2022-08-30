@@ -25,7 +25,7 @@ git clone https://github.com/abel-otegbola/Quiz-app
 
 open the folder 
 
-``md
+```md
 cd ecommerce
 ```
 

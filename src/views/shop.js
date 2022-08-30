@@ -5,10 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import bg1 from "../assets/imgs/bg1.jpg"
 import bg2 from "../assets/imgs/bg2.jpg"
 import bg3 from "../assets/imgs/bg3.jpg"
-import { products } from "../data/products";
+import { useSelector } from "react-redux";
 import Product from "../components/product";
 
 const Shop = () => {
+    const products = useSelector((state) => state.data.products)
+
     var settings = {
         autoplay: true,
         autoplaySpeed: 4000,
@@ -28,6 +30,7 @@ const Shop = () => {
             }
         ]
     }
+
 
     return (
         <Box>
@@ -57,8 +60,8 @@ const Shop = () => {
                 </Box>
                 <Box w={[ "100%", "100%", "75%" ]} p="2">
                     <Flex justify="space-between" flexWrap="wrap">
-                    {
-                        products.products.map(product => {
+                    { products && 
+                        products.map(product => {
                             return (      
                                 <Product key={product.id} product={product} />
                             )

@@ -1,11 +1,21 @@
 import { Badge, Box, Button, Divider, Flex, Image, Input, Link, Text } from "@chakra-ui/react"
 import Heading from "../components/heading";
-import chair from "../assets/imgs/chairs/chair03-01.png"
 import { FaHandPointDown, FaMinus, FaPlus } from "react-icons/fa";
 import { FiTrash } from "react-icons/fi";
+import { useSelector, useDispatch } from "react-redux";
+import { removeProductFromCart } from "../redux/slice/cartSlice";
+import { useState, useEffect } from "react";
 
 const Cart = () => {
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => state.data.cart)
+    const [subTotal, setSubTotal] = useState(0)
 
+    useEffect(() => {
+        let subTotalSum = 0;
+        cart.map(item => { return subTotalSum += item.price });
+        setSubTotal(subTotalSum);
+    }, [setSubTotal, cart])
 
     return (
         <Box py="50px" px={[ "20px", "20px", "10%" ]}>
@@ -15,37 +25,29 @@ const Cart = () => {
                 <Box w={["100%", "100%", "60%"]} fontSize="14px" >
                     <Box p="20px" bgColor="#f3f3f3">
 
-                        <Flex align="center" borderBlock="1px solid #f3f3f3" bgColor="white" p="10px">
-                            <Image src={chair} w={["100px","150px"]} />
-                            <Box p="30px 10px" flex="1">
-                                <Text fontWeight="bold">Ashby center chair <Badge colorScheme="red" p="2" float="right"><FiTrash /></Badge></Text>
-                                <Text>chair, furniture</Text>
-                                <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
-                                    <Text fontSize="18px" fontWeight="bold">$120.00</Text>
-                                    <Flex justify="flex-end" mt="10px">
-                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
-                                        <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
-                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
-                                    </Flex>
+                        {
+                            cart && cart.map(product => { 
+                                return (
+
+                                <Flex key={product.id} align="center" borderBlock="1px solid #f3f3f3" bgColor="white" p="10px">
+                                    <Image src={product.thumbnail} w={["100px","150px"]} />
+                                    <Box p="30px 10px" flex="1">
+                                        <Text fontWeight="bold">{product.title}<Badge colorScheme="red" p="2" float="right"><FiTrash  onClick={() => dispatch(removeProductFromCart(product.id))}/></Badge></Text>
+                                        <Text>{product.category}</Text>
+                                        <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
+                                            <Text fontSize="18px" fontWeight="bold">${product.price}</Text>
+                                            <Flex justify="flex-end" mt="10px">
+                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
+                                                <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
+                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
+                                            </Flex>
+                                        </Flex>
+                                    </Box>
                                 </Flex>
-                            </Box>
-                        </Flex>
-                        
-                        <Flex align="center" borderBlock="1px solid #f3f3f3" bgColor="white" p="10px">
-                            <Image src={chair} w={["100px","150px"]} />
-                            <Box p="30px 10px" flex="1">
-                                <Text fontWeight="bold">Ashby center chair <Badge colorScheme="red" p="2" float="right"><FiTrash /></Badge></Text>
-                                <Text>chair, furniture</Text>
-                                <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
-                                    <Text fontSize="18px" fontWeight="bold">$120.00</Text>
-                                    <Flex justify="flex-end" mt="10px">
-                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
-                                        <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
-                                        <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
-                                    </Flex>
-                                </Flex>
-                            </Box>
-                        </Flex>
+
+                                )
+                            })
+                        }
 
                         <Box justify="space-between" p="10px 0" >
                             <Flex p="3" pt="5%"><Text>Have a coupon code? Enter here </Text> <Text color="rgb(228, 99, 13)" p="5px 10px"><FaHandPointDown /></Text></Flex>
@@ -58,7 +60,7 @@ const Cart = () => {
                             <Text p="3" color="rgb(228, 99, 13)">ORDER SUMMARY</Text>
                             <Flex justify="space-between" bgColor="white" p="15px">
                                 <Text>Subtotal</Text>
-                                <Text as="b">$400.90</Text>
+                                <Text as="b">${ subTotal }</Text>
                             </Flex>
                             <Flex justify="space-between" bgColor="white" p="15px">
                                 <Text>Delivery</Text>
@@ -73,7 +75,7 @@ const Cart = () => {
                             
                             <Flex justify="space-between" bgColor="white" p="15px">
                                 <Text>Total:</Text>
-                                <Text as="b" fontSize="20px" color="rgb(228, 99, 13)">$400.90</Text>
+                                <Text as="b" fontSize="20px" color="rgb(228, 99, 13)">${(subTotal + 50.90) / 2 }</Text>
                             </Flex>
                         </Box>
                         

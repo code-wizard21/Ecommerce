@@ -8,7 +8,7 @@ import bg2 from "../assets/imgs/bg2.jpg"
 import bg3 from "../assets/imgs/bg3.jpg"
 import Heading from "../components/heading";
 import Product from "../components/product";
-import { products } from "../data/products";
+import { data } from "../data/products";
 import { FiAlertOctagon, FiHeadphones, FiTruck } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -91,7 +91,7 @@ const Home = () => {
 
                 <Flex justify="space-between" flexWrap="wrap">
                 {
-                    products.products.map(product => {
+                    data.products.map(product => {
                         return (      
                             <Product key={product.id} product={product} />
                         )
