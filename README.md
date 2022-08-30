@@ -1,5 +1,5 @@
 
-## Quiz App (Quizzical poincare)
+## (Motara) Ecommerce Application
 
  A React js ecommerce website.
 <hr>
@@ -18,22 +18,26 @@ To clone and run this application, you'll need git and npm installed on your com
 Download [Git](https://git-scm.com)
 
 open up your terminal and clone this repository
-```bash
+
+```md
 git clone https://github.com/abel-otegbola/Quiz-app
 ```
 
 open the folder 
-``bash
+
+``md
 cd ecommerce
 ```
 
 Install the dependencies by running
-```bash
+
+```md
 npm install
 ```
 
 Once installed, run
-```bash
+
+```md
 npm start
 ```
 

@@ -16,22 +16,22 @@ const Footer = () => {
                     <Text fontWeight="700" py="3">PAGES</Text>
                     
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Home
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             About
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Shop
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Wishlist
                         </Link>
                     </Text>
@@ -43,27 +43,27 @@ const Footer = () => {
                     <Text fontWeight="700" py="3">SERVICES</Text>
                     
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Orders
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             History
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Discounts/Rewards
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Profile
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Settings
                         </Link>
                     </Text>
@@ -75,22 +75,22 @@ const Footer = () => {
                     <Text fontWeight="700" py="3">SUPPORTS</Text>
                     
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Notifications
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Customer support
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Product return
                         </Link>
                     </Text>
                     <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "orange.300" }}>
+                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
                             Forum
                         </Link>
                     </Text>
@@ -98,7 +98,7 @@ const Footer = () => {
                 </Box>
             </Flex>
 
-            <Flex mb={[ "10%", "10%", 0 ]} justify="space-between" p="20px 10%" bgColor="gray.400"color="white" fontSize="14px">
+            <Flex mb={[ "12%", "12%", 0 ]} justify="space-between" py="20px" px={[ "20px", "20px", "10%" ]} bgColor="gray.600"color="white" fontSize="14px">
                 <Text>Designed by Abel</Text>
                 <Text>Copyright &copy; { new Date().getFullYear() }</Text>
             </Flex>

@@ -32,29 +32,29 @@ const Home = () => {
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
                     <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
-                        <Box w="100%" h="500px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                     </Slider>
                 </Box>
-                <Box w={[ null, "100%", "40%" ]} position="absolute" left={["0", "0", "10%"]} p="5%" ps={[ "5%", "5%", 0 ]} top={[ "0", "0", "auto" ]} bgColor={[ "blackAlpha.300", "blackAlpha.300", "whiteAlpha.700"]} color={[ "white", "white", "black" ]}>
+                <Box w={[ null, "100%", "40%" ]} position="absolute" left={["0", "0", "10%"]} p="5%" ps={[ "5%", "5%", 0 ]} top={[ "0", "0", "auto" ]} bgColor={[ "blackAlpha.400", "blackAlpha.400", "whiteAlpha.800"]} color={[ "white", "white", "black" ]}>
                     <Text fontSize="40px" fontWeight="700" pb="15px" >Minimalistic and Modern Interior.</Text>
-                    <Text fontSize="14px" fontWeight="600" mb="35px">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
-                    <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="orange.300" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
+                    <Text fontSize="14px" lineHeight="30px" fontWeight="600" mb="35px">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
+                    <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="rgb(228, 99, 13)" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                 </Box>
             </Flex>
 
             <Box p={[ "10px", "40px"]} bgColor="gray.100">
                 <Flex justify="space-around" flexWrap="wrap">
-                    <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
+                    <Link href="#" display="flex" color="rgb(228, 99, 13)" alignItems="center" mx="4" my={[ "15px", null ]}>
                         <FiTruck style={{ fontSize:"30px" }} />
                         <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
                     </Link>
-                    <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
+                    <Link href="#" display="flex" color="rgb(228, 99, 13)" alignItems="center" mx="4" my={[ "15px", null ]}>
                         <FiHeadphones style={{ fontSize:"30px" }}  />
                         <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
                     </Link>
-                    <Link href="#" display="flex" color="orange.300" alignItems="center" my={[ "15px", null ]}>
+                    <Link href="#" display="flex" color="rgb(228, 99, 13)" alignItems="center" mx="4" my={[ "15px", null ]}>
                         <FiAlertOctagon style={{ fontSize:"30px" }}  />
                         <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
                     </Link>
@@ -62,24 +62,24 @@ const Home = () => {
             </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
-                <Text fontSize="20px" fontWeight="600" textAlign="center" color="orange">CATEGORIES</Text>
+                <Heading mainText={"CATEGORIES"} />
                 <Flex justify="space-between" flexWrap="wrap" px={[ "20px", "20px", null ]}>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">SOFA</Text>
-                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 30%</Badge></Text>
+                            <Text fontWeight="600" color="rgb(228, 99, 13)" mb="20px"><Badge colorScheme="orange">SAVE 30%</Badge></Text>
                         </Box>
                     </Link>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg2})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">NEW ARRIVAL</Text>
-                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 50%</Badge></Text>
+                            <Text fontWeight="600" color="rgb(228, 99, 13)" mb="20px"><Badge colorScheme="orange">SAVE 50%</Badge></Text>
                         </Box>
                     </Link>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg3})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">CHAIR</Text>
-                            <Text fontWeight="600" color="orange.300" mb="20px"><Badge colorScheme="orange">SAVE 20%</Badge></Text>
+                            <Text fontWeight="600" color="rgb(228, 99, 13)" mb="20px"><Badge colorScheme="orange">SAVE 20%</Badge></Text>
                         </Box>
                     </Link>
                 </Flex>
@@ -105,7 +105,7 @@ const Home = () => {
                     <Box w={[ null, "100%", "40%" ]} p="5%" ps={[ "5%", "5%", 0 ]}>
                         <Text fontSize={[ "20px", "30px" ]} fontWeight="700" pb="15px" >Artistic Designs with unique shapes.</Text>
                         <Text fontSize="14px" fontWeight="600" mb="35px">Purpose of a furniture is to keep you comfortable while also beautifying your home</Text>
-                        <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="orange.300" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
+                        <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="rgb(228, 99, 13)" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                     </Box>
                     <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" />
                 </Flex>
@@ -116,7 +116,7 @@ const Home = () => {
 
                 <Flex justify="center" align="center" m="auto" w="fit-content" p="2px" bgColor="white" border="1px" borderColor="gray.300" borderRadius="0">
                     <Input placeholder="Enter your email..." fontSize="14px" borderRadius="0" border="none" w={[ "100%", "100%", "300px" ]} />
-                    <Link href="/" bgColor="orange.300" p="10px 25px" border="1px" borderColor="orange.300" color="white">
+                    <Link href="/" bgColor="rgb(228, 99, 13)" p="10px 25px" border="1px" borderColor="rgb(228, 99, 13)" color="white">
                         Subscribe
                     </Link>
                 </Flex>

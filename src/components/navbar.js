@@ -26,32 +26,32 @@ const Navbar = () => {
                         <SearchBar />
 
                         <Text display="flex" mt="3">
-                            <Link href="/" p="2" w="100%" color={(location === "/") ? "orange.300" : ""} _hover={{ color: "orange.300" }}>
+                            <Link href="/" p="2" w="100%" color={(location === "/") ? "rgb(228, 99, 13)" : ""} _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Home
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/shop" p="2" w="100%" color={(location === "/shop") ? "orange.300" : ""}  _hover={{ color: "orange.300" }}>
+                            <Link href="/shop" p="2" w="100%" color={(location === "/shop") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Shop
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/cart" p="2" w="100%" color={(location === "/cart") ? "orange.300" : ""}  _hover={{ color: "orange.300" }}>
+                            <Link href="/cart" p="2" w="100%" color={(location === "/cart") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Cart
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/" p="2" w="100%" color={(location === "/wishlist") ? "orange.300" : ""}  _hover={{ color: "orange.300" }}>
+                            <Link href="/" p="2" w="100%" color={(location === "/wishlist") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Wishlist
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/" p="2" w="100%" color={(location === "/account") ? "orange.300" : ""}  _hover={{ color: "orange.300" }}>
+                            <Link href="/" p="2" w="100%" color={(location === "/account") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Account
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/" p="2" w="100%" color={(location === "/settings") ? "orange.300" : ""}  _hover={{ color: "orange.300" }}>
+                            <Link href="/" p="2" w="100%" color={(location === "/settings") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Settings
                             </Link>
                         </Text>

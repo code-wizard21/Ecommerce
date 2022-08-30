@@ -47,9 +47,9 @@ const Login = () => {
                         <Link w="150px" fontSize="12px" color="red">Forgot password?</Link>
                     </Flex>
 
-                    <Button fontSize="14px" borderRadius="2px" border="1px solid orange" bgColor="orange.300" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Login</Button>
+                    <Button fontSize="14px" borderRadius="2px" border="1px solid rgb(228, 99, 13)" bgColor="rgb(228, 99, 13)" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Login</Button>
 
-                    <Text mt="4">Don't have an account yet? <Link href="/register" color="orange.300">Sign up</Link></Text>
+                    <Text mt="4">Don't have an account yet? <Link href="/register" color="rgb(228, 99, 13)">Sign up</Link></Text>
                 </Box>
             </Flex>
         </Flex>

@@ -10,8 +10,8 @@ const MobileBottombar = () => {
     const location = useLocation().pathname;
 
     const active = {
-        color: "#f6ad55",
-        backgroundColor: "rgb(246, 173, 76, 0.3)"
+        color: "rgb(228, 99, 13)",
+        backgroundColor: "rgb(228, 90, 13, 0.2)"
     }
 
     return (
@@ -27,12 +27,12 @@ const MobileBottombar = () => {
                     </ModalBody>
                 </ModalContent>
             </Modal>
-            <Text onClick={onOpen} p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "#")? active : { color: ""} }><FiSearch /></Text>
+            <Text onClick={onOpen} p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "#")? active : { color: ""} } title="search"><FiSearch /></Text>
 
-            <Link href="/shop" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/shop")? active  : { color: "" } }><FaStoreAlt /></Link>
-            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/")? active : { color: ""} }><FiHome /></Link>
-            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/notifications")? active : { color: ""}}><FiBell /></Link>
-            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/wishlist")? active : { color: ""} }><FiHeart /></Link>
+            <Link href="/shop" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/shop")? active  : { color: "" } } title="shop"><FaStoreAlt /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/")? active : { color: ""} } title="home"><FiHome /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/notifications")? active : { color: ""}} title="notifications"><FiBell /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/wishlist")? active : { color: ""} } title="wishlist"><FiHeart /></Link>
         </Flex>
     )
 }
