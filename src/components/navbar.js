@@ -41,7 +41,7 @@ const Navbar = () => {
                             </Link>
                         </Text>
                         <Text display="flex">
-                            <Link href="/" p="2" w="100%" color={(location === "/wishlist") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
+                            <Link href="/wishlist" p="2" w="100%" color={(location === "/wishlist") ? "rgb(228, 99, 13)" : ""}  _hover={{ color: "rgb(228, 99, 13)" }}>
                                 Wishlist
                             </Link>
                         </Text>

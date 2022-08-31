@@ -5,6 +5,7 @@ import { FiTrash } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { removeProductFromCart } from "../redux/slice/cartSlice";
 import { useState, useEffect } from "react";
+import { Link as RouterLink, } from "react-router-dom"
 
 const Cart = () => {
     const dispatch = useDispatch();
@@ -30,7 +31,9 @@ const Cart = () => {
                                 return (
 
                                 <Flex key={product.id} align="center" borderBlock="1px solid #f3f3f3" bgColor="white" p="10px">
-                                    <Image src={product.thumbnail} w={["100px","150px"]} />
+                                    <RouterLink to={{pathname:`/singleProduct?id=${product.id}`}}>
+                                        <Image src={product.thumbnail} w={["100px","150px"]} />
+                                    </RouterLink>
                                     <Box p="30px 10px" flex="1">
                                         <Text fontWeight="bold">{product.title}<Badge colorScheme="red" p="2" float="right"><FiTrash  onClick={() => dispatch(removeProductFromCart(product.id))}/></Badge></Text>
                                         <Text>{product.category}</Text>
@@ -88,7 +91,6 @@ const Cart = () => {
 
                 <Box w={["100%", "100%", "36%"]} border="1px solid #f4f4f4" fontSize="14px" p="20px" mx="2%" >
                     <Text fontWeight="700" fontSize="18px" mb="3" color="rgb(228, 99, 13)">ORDER NOW</Text>
-
                 </Box>
             </Flex>
         </Box>

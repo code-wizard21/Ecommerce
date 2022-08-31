@@ -5,9 +5,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
 }
 body p {
   font-family: 'Lato', sans-serif;
+  line-height: 25px;
 }
 
 code {

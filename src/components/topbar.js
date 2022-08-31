@@ -11,7 +11,7 @@ const Topbar = () => {
     const active = {
         color: "rgb(228, 99, 13)"
     }
-    
+
 
     return (
         <nav>
@@ -27,7 +27,7 @@ const Topbar = () => {
                 </Box>
 
                 <Flex align="center" justify="flex-end" w="22%">
-                    <Link href="/cart" p="2" me={3} position="relative" style={ (location === "/cart") ? active : {color:""} } _hover={{ color: "rgb(228, 99, 13)" }} title="cart">
+                    <Link href="/cart" p="2" me={6} position="relative" style={ (location === "/cart") ? active : {color:""} } _hover={{ color: "rgb(228, 99, 13)" }} title="cart">
                         <FiShoppingCart /><Badge colorScheme="orange" position="absolute" top="0" right="-5px">{cart.length}</Badge>
                     </Link>
                     

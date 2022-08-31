@@ -1,17 +1,19 @@
-import { Flex, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
+import { Badge, Flex, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { FaStoreAlt } from "react-icons/fa";
 import { FiBell, FiHeart, FiHome, FiSearch } from "react-icons/fi"
 import { useLocation } from "react-router-dom";
 import SearchBar from "./searchbar";
+import { useSelector } from "react-redux"
 
 
 const MobileBottombar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const location = useLocation().pathname;
+    const wishlist = useSelector((state) => state.data.wishlist);
 
     const active = {
         color: "rgb(228, 99, 13)",
-        backgroundColor: "rgb(228, 90, 13, 0.2)"
+        backgroundColor: "rgb(228, 90, 13, 0.1)"
     }
 
     return (
@@ -31,8 +33,13 @@ const MobileBottombar = () => {
 
             <Link href="/shop" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/shop")? active  : { color: "" } } title="shop"><FaStoreAlt /></Link>
             <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/")? active : { color: ""} } title="home"><FiHome /></Link>
-            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/notifications")? active : { color: ""}} title="notifications"><FiBell /></Link>
-            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/wishlist")? active : { color: ""} } title="wishlist"><FiHeart /></Link>
+            <Link href="/" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/notifications")? active : { color: ""}} title="notifications">
+                <FiBell />
+            </Link>
+            <Link href="/wishlist" p="15px 18px" fontSize="20px" borderRadius="5px" _hover={ active} style={ (location === "/wishlist")? active : { color: ""} } position="relative" title="wishlist">
+                <FiHeart />
+                <Badge colorScheme="red" position="absolute" top="0" right="-5px">{wishlist.length}</Badge>
+            </Link>
         </Flex>
     )
 }

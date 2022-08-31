@@ -13,6 +13,7 @@ import {
     REGISTER
 } from "redux-persist";
 import cartReducer from "./slice/cartSlice";
+import wishlistReducer from "./slice/wishlistSlice";
 
 const persistConfig = {
     key: 'root',
@@ -22,6 +23,7 @@ const persistConfig = {
 const combinedReducers = combineReducers({
     products: productsReducer,
     cart: cartReducer,
+    wishlist: wishlistReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, combinedReducers)
