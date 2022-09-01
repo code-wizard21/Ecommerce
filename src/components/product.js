@@ -22,7 +22,7 @@ const Product = ({ product }) => {
 
     return (
         <Box position="relative" w={[ "100%", "45%", "23%" ]}  m={[ "20px", "10px", "10px" ]} shadow="base">
-            <Badge colorScheme="orange" position="absolute" top="10px" right="10px">{product.discountPercentage}%</Badge>
+            <Badge bgColor="brand.900" color="white" position="absolute" top="10px" right="10px">{product.discountPercentage}%</Badge>
             <Link to={{pathname:`/singleProduct?id=${product.id}`}}>
                 <Image w="100%" src={product.thumbnail} alt="product" p="4" />
             </Link>

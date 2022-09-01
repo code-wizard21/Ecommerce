@@ -9,7 +9,7 @@ const Checkout= () => {
             <Flex flexWrap="wrap">
                 <Box w={["100%", "100%", "60%"]} fontSize="14px" >
                     <Box p="20px" bgColor="#f3f3f3">
-                    <Text fontWeight="700" fontSize="18px" mb="3" p="2" color="rgb(228, 99, 13)">ORDER NOW</Text>
+                    <Text fontWeight="700" fontSize="18px" mb="3" p="2" color="brand.900">ORDER NOW</Text>
                     <form method="post" action="/">
                         <Box bgColor="white" p="10px">
                             <Box>
@@ -88,7 +88,7 @@ const Checkout= () => {
                     </Box>
 
                     <Flex m="20px 0" bgColor="white" p="10px 0">
-                        <Link href="/order" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="rgb(228, 99, 13)">Place order</Link>
+                        <Link href="/order" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="brand.900">Place order</Link>
                     </Flex>
 
                 </Box>

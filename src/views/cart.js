@@ -53,14 +53,14 @@ const Cart = () => {
                         }
 
                         <Box justify="space-between" p="10px 0" >
-                            <Flex p="3" pt="5%"><Text>Have a coupon code? Enter here </Text> <Text color="rgb(228, 99, 13)" p="5px 10px"><FaHandPointDown /></Text></Flex>
+                            <Flex p="3" pt="5%"><Text>Have a coupon code? Enter here </Text> <Text color="brand.900" p="5px 10px"><FaHandPointDown /></Text></Flex>
                             <Flex align="center" w="100%" p="2px" mb="5%" border="1px" bgColor="white" borderColor="gray.100" borderRadius="0">
                                 <Input placeholder="Enter code" fontSize="14px" borderRadius="0" />
                                 <Button href="/" bgColor="gray.100" fontSize="14px" p="12px 25px" border="1px" borderColor="gray.100" borderRadius="0">
                                     Redeem code
                                 </Button>
                             </Flex>
-                            <Text p="3" color="rgb(228, 99, 13)">ORDER SUMMARY</Text>
+                            <Text p="3" color="brand.900">ORDER SUMMARY</Text>
                             <Flex justify="space-between" bgColor="white" p="15px">
                                 <Text>Subtotal</Text>
                                 <Text as="b">${ subTotal }</Text>
@@ -78,19 +78,19 @@ const Cart = () => {
                             
                             <Flex justify="space-between" bgColor="white" p="15px">
                                 <Text>Total:</Text>
-                                <Text as="b" fontSize="20px" color="rgb(228, 99, 13)">${(subTotal + 50.90) / 2 }</Text>
+                                <Text as="b" fontSize="20px" color="brand.900">${(subTotal + 50.90) / 2 }</Text>
                             </Flex>
                         </Box>
                         
                         <Flex m="20px 0" bgColor="white" p="10px">
-                            <Link href="/checkout" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="rgb(228, 99, 13)">Checkout now</Link>
+                            <Link href="/checkout" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="brand.900">Checkout now</Link>
                         </Flex>
 
                     </Box>
                 </Box>
 
                 <Box w={["100%", "100%", "36%"]} border="1px solid #f4f4f4" fontSize="14px" p="20px" mx="2%" >
-                    <Text fontWeight="700" fontSize="18px" mb="3" color="rgb(228, 99, 13)">ORDER NOW</Text>
+                    <Text fontWeight="700" fontSize="18px" mb="3" color="brand.900">ORDER NOW</Text>
                 </Box>
             </Flex>
         </Box>

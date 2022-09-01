@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import NavLink from "./navLink";
 import SocialLinks from "./sociallinks";
 
 const Footer = () => {
@@ -15,26 +16,10 @@ const Footer = () => {
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" py="3">PAGES</Text>
                     
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Home
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            About
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Shop
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Wishlist
-                        </Link>
-                    </Text>
+                    <NavLink navLocation={"home"} />
+                    <NavLink navLocation={"shop"} />
+                    <NavLink navLocation={"cart"} />
+                    <NavLink navLocation={"wishlist"} />
 
                 </Box>
 
@@ -42,59 +27,21 @@ const Footer = () => {
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" py="3">SERVICES</Text>
                     
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Orders
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            History
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Discounts/Rewards
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Profile
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Settings
-                        </Link>
-                    </Text>
+                    <NavLink navLocation={"orders"} />
+                    <NavLink navLocation={"history"} />
+                    <NavLink navLocation={"discounts/rewards"} />
+                    <NavLink navLocation={"profile"} />
+                    <NavLink navLocation={"settings"} />
 
                 </Box>
 
                 
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" py="3">SUPPORTS</Text>
-                    
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Notifications
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Customer support
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Product return
-                        </Link>
-                    </Text>
-                    <Text display="flex">
-                        <Link href="/" p="2" ps="0" w="100%" _hover={{ color: "rgb(228, 99, 13)" }}>
-                            Forum
-                        </Link>
-                    </Text>
-
+                    <NavLink navLocation={"notifications"} />
+                    <NavLink navLocation={"customer support"} />
+                    <NavLink navLocation={"product return"} />
+                    <NavLink navLocation={"forum"} />
                 </Box>
             </Flex>
 

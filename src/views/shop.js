@@ -38,17 +38,17 @@ const Shop = () => {
                 <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg1})`} backgroundSize="cover" bgPosition="50%, 75%">
                         <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
-                            <Text mt="30px" fontSize="20px" fontWeight="700" color="rgb(228, 99, 13)">Get as low as 60% discount on our chairs</Text>
+                            <Text mt="30px" fontSize="20px" fontWeight="700" color="brand.900">Get as low as 60% discount on our chairs</Text>
                         </Box>
                     </Box>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg2})`} backgroundSize="cover" bgPosition="50%, 75%">
                         <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
-                            <Text mt="30px" fontSize="20px" fontWeight="700" color="rgb(228, 99, 13)">Free delivery when you purchase our Tv stands</Text>
+                            <Text mt="30px" fontSize="20px" fontWeight="700" color="brand.900">Free delivery when you purchase our Tv stands</Text>
                         </Box>
                     </Box>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg3})`} backgroundSize="cover" bgPosition="50%, 75%">
                         <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
-                            <Text mt="30px" fontSize="20px" fontWeight="700" color="rgb(228, 99, 13)">Flash sales ongoing for our sofa collections</Text>
+                            <Text mt="30px" fontSize="20px" fontWeight="700" color="brand.900">Flash sales ongoing for our sofa collections</Text>
                         </Box>
                     </Box>
                 </Slider>

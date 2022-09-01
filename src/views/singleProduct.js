@@ -31,7 +31,7 @@ const SingleProduct = () => {
                     <Text fontSize="25px" fontWeight="600" pb="20px">{product.title}</Text>
                     <Text fontSize="30px" color="gray.500" pb="20px">${product.price}</Text>
                     <StarRating rating={product.rating} />
-                    <Text my="20px">{product.description}</Text>
+                    <Text my="20px" lineHeight="25px">{product.description}</Text>
                     <Text>CATEGORY: {product.category}</Text>
                 </Box>
             </Flex>
