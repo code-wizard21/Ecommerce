@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Image, Input, Link, Text } from "@chakra-ui/react";
+import { Badge, Box, Flex, Grid, Image, Input, Link, Text } from "@chakra-ui/react";
 import bgsofas1 from "../assets/imgs/bgsofas.webp"
 import bgsofas2 from "../assets/imgs/bgsofas1.webp"
 import bgsofas3 from "../assets/imgs/bgsofas3.webp"
@@ -60,7 +60,7 @@ const Home = () => {
             </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
-                <Heading mainText={"CATEGORIES"} />
+                <Heading mainText={"GET AWESOME DISCOUNTS ON ALL PURCHASE"} subText={"Get our awesome discounts now when you purchase."} />
                 <Flex justify="space-between" flexWrap="wrap" px={[ "20px", "20px", null ]}>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
                         <Box p="50px">
@@ -84,10 +84,10 @@ const Home = () => {
             </Box>
 
 
-            <Box py="5%" px={[ null, "0", "5%", "10%" ]}>
+            <Box py="5%" px={[ null, "20px", "5%", "10%" ]}>
                 <Heading mainText={"HOT DEALS FOR YOU"} subText={"Our customers most loved products you can also get."} />
 
-                <Flex justify="space-between" flexWrap="wrap">
+                <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]}>
                 {
                     data.products.map(product => {
                         return (      
@@ -95,7 +95,7 @@ const Home = () => {
                         )
                     })
                 }
-                </Flex>
+                </Grid>
             </Box>
 
             <Box py="5%" px={[ null, "0", "5%", "10%" ]} my="5%">

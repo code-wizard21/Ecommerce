@@ -5,7 +5,7 @@ const HeroSection = ({ mainText, subText }) => {
         <Box
             w={[ null, "100%", "40%" ]} 
             position="absolute" left={["0", "0", "10%"]} top={[ "0", "0", "auto" ]}
-            p={"5%"} pt={[ "30%", "5%", "5%" ]} pb="80px" ps={[ "5%", "5%", 0 ]} 
+            p={"5%"} pt={[ "10%", "5%", "5%" ]} pb="80px" ps={[ "5%", "5%", 0 ]} 
             bgColor={[ "blackAlpha.600", "blackAlpha.600", "whiteAlpha.800"]} 
             color={[ "white", "white", "black" ]}
         >

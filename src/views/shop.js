@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react"
+import { Box, Flex, Grid, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -59,7 +59,7 @@ const Shop = () => {
                     <Text>Filter Products</Text>
                 </Box>
                 <Box w={[ "100%", "100%", "75%" ]} p="2">
-                    <Flex justify="space-between" flexWrap="wrap">
+                    <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}>
                     { products && 
                         products.map(product => {
                             return (      
@@ -67,7 +67,7 @@ const Shop = () => {
                             )
                         })
                     }
-                    </Flex>
+                    </Grid>
                 </Box>
             </Flex>
         </Box>

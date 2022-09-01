@@ -21,15 +21,15 @@ const Product = ({ product }) => {
     }, [cart, wishlist])
 
     return (
-        <Box position="relative" w={[ "100%", "45%", "23%" ]}  m={[ "20px", "10px", "10px" ]} shadow="base">
+        <Box position="relative" shadow="base">
             <Badge bgColor="brand.900" color="white" position="absolute" top="10px" right="10px">{product.discountPercentage}%</Badge>
             <Link to={{pathname:`/singleProduct?id=${product.id}`}}>
                 <Image w="100%" src={product.thumbnail} alt="product" p="4" />
             </Link>
             <Box p="4" fontSize="14px">
                 <Flex px="5px" align="center">
-                    <Text fontSize="16px" fontWeight="600" me="10px">${product.price}</Text>
-                    <Badge colorScheme="gray" textDecoration="line-through">$200</Badge>
+                    <Text fontSize="16px" fontWeight="600" me="10px">${product.price - ((product.discountPercentage/100) * product.price)}</Text>
+                    <Badge colorScheme="gray" textDecoration="line-through">${product.price}</Badge>
                 </Flex>
                 <Text my="20px" p="3px 6px" >{product.title}</Text>
                 <Flex>
