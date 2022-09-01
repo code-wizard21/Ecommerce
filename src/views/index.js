@@ -13,6 +13,7 @@ import { FiAlertOctagon, FiHeadphones, FiTruck } from "react-icons/fi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import HeroSection from "../components/heroSection";
 
 
 const Home = () => {
@@ -32,23 +33,13 @@ const Home = () => {
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
                     <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
-                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage">
+                        </Box>
                         <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                         <Box w="100%" h="600px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                     </Slider>
                 </Box>
-                <Box 
-                    w={[ null, "100%", "40%" ]} 
-                    h={[ "100%", "100%", "auto" ]} 
-                    position="absolute" left={["0", "0", "10%"]} top={[ "0", "0", "auto" ]}
-                    p={"5%"} pt={[ "15%", "5%", "5%" ]} pb="80px" ps={[ "5%", "5%", 0 ]} 
-                    bgColor={[ "blackAlpha.600", "blackAlpha.600", "whiteAlpha.800"]} 
-                    color={[ "white", "white", "black" ]}
-                >
-                    <Text fontSize="40px" lineHeight="50px" fontWeight="700" pb="15px" >Minimalistic and Modern Interior.</Text>
-                    <Text fontSize="14px" lineHeight="30px" fontWeight="600" mb="35px">Upgrade your personality with our quality products. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.</Text>
-                    <Link href="/shop" fontSize="14px" p="10px 20px" bgColor="brand.900" borderRadius="30px" color="white" _hover={{ bgColor: "brand.800", color: "white" }}>Shop now</Link>
-                </Box>
+                <HeroSection mainText={"Minimalistic and Modern Interior."} subText={"Upgrade your personality with our quality products. You can never go wrong with any of our products."} />
             </Flex>
 
             <Box p={[ "10px", "40px"]} bgColor="gray.100">
