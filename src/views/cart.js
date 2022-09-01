@@ -3,7 +3,7 @@ import Heading from "../components/heading";
 import { FaHandPointDown, FaMinus, FaPlus } from "react-icons/fa";
 import { FiTrash } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
-import { removeProductFromCart } from "../redux/slice/cartSlice";
+import { removeProductFromCart, increaseCartQuantity, decreaseCartQuantity } from "../redux/slice/cartSlice";
 import { useState, useEffect } from "react";
 import { Link as RouterLink, } from "react-router-dom"
 
@@ -14,7 +14,7 @@ const Cart = () => {
 
     useEffect(() => {
         let subTotalSum = 0;
-        cart.map(item => { return subTotalSum += item.price });
+        cart.map(item => { return subTotalSum += item.price*(item.quantity || 1) });
         setSubTotal(subTotalSum);
     }, [setSubTotal, cart])
 
@@ -27,9 +27,10 @@ const Cart = () => {
                     <Box p="20px" bgColor="#f3f3f3">
 
                         {
-                            cart && cart.map(product => { 
+                            cart && (cart.length === 0) ? <Text p="30px" bgColor="white">Your Cart is empty. Add products from the <Link href="/shop" color="brand.900">Shop</Link></Text> :
+                            cart.map(product => { 
                                 return (
-
+                                
                                 <Flex key={product.id} align="center" borderBlock="1px solid #f3f3f3" bgColor="white" p="10px">
                                     <RouterLink to={{pathname:`/singleProduct?id=${product.id}`}}>
                                         <Image src={product.thumbnail} w={["100px","150px"]} />
@@ -40,9 +41,9 @@ const Cart = () => {
                                         <Flex justify="space-between" align="flex-end" flexWrap="wrap" w="100%" mt="6">
                                             <Text fontSize="18px" fontWeight="bold">${product.price}</Text>
                                             <Flex justify="flex-end" mt="10px">
-                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaPlus /></Button>
-                                                <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value="20"/>
-                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"><FaMinus /></Button>
+                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1"  onClick={() => dispatch(increaseCartQuantity(product.id))}><FaPlus /></Button>
+                                                <Input size="sm" type="number" borderColor="gray.100" fontSize="12px" borderRadius="0" w="40px" readOnly={true} value={product.quantity ? product.quantity : 1}/>
+                                                <Button size="sm" borderColor="gray.100" fontSize="10px" borderRadius="0" p="1" onClick={() => dispatch(decreaseCartQuantity(product.id))}><FaMinus /></Button>
                                             </Flex>
                                         </Flex>
                                     </Box>

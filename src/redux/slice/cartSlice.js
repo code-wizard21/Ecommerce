@@ -10,7 +10,8 @@ export const cartSlice = createSlice({
         addProductToCart: (state, action) => {
             for(let i=0; i<data.products.length; i++) {
                 if(data.products[i].id === action.payload) {
-                    state.push(data.products[i])
+                    let newProduct = data.products[i]
+                    state.unshift(newProduct)
                 }
             }
         },
@@ -19,9 +20,26 @@ export const cartSlice = createSlice({
             return state.filter(product => product.id !== action.payload)
         },
         increaseCartQuantity: (state, action) => {
-            for(let i=0; i<state.cart.length; i++) {
-                if(state[i].id === action.payload.id) {
-                    state[i].quantity += 1
+            for(let i=0; i<state.length; i++) {
+                if(state[i].id === action.payload) {
+                    if(state[i].quantity > 1) {
+                        state[i].quantity++
+                    }
+                    else {
+                        state[i].quantity = 2
+                    }
+                }
+            }
+        },
+        decreaseCartQuantity: (state, action) => {
+            for(let i=0; i<state.length; i++) {
+                if(state[i].id === action.payload) {
+                    if(state[i].quantity < 1) {
+                        state[i].quantity = 1
+                    }
+                    else {
+                        state[i].quantity--
+                    }
                 }
             }
         }
@@ -29,7 +47,7 @@ export const cartSlice = createSlice({
 })
 
 
-export const { addProductToCart, removeProductFromCart } = cartSlice.actions
+export const { addProductToCart, removeProductFromCart, increaseCartQuantity, decreaseCartQuantity } = cartSlice.actions
 
 const cartReducer = cartSlice.reducer;
 
