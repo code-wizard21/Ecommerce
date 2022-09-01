@@ -65,19 +65,19 @@ const Home = () => {
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">SOFA</Text>
-                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="orange">SAVE 30%</Badge></Text>
+                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 30%</Badge></Text>
                         </Box>
                     </Link>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg2})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">NEW ARRIVAL</Text>
-                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="orange">SAVE 50%</Badge></Text>
+                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 50%</Badge></Text>
                         </Box>
                     </Link>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg3})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">CHAIR</Text>
-                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="orange">SAVE 20%</Badge></Text>
+                            <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 20%</Badge></Text>
                         </Box>
                     </Link>
                 </Flex>
