@@ -16,10 +16,10 @@ const MobileBottombar = () => {
     return (
         <Flex justify="space-between" align="center" p="5px 12px" bgColor="white" borderColor="gray.100" w="100%" display={[ "flex", "flex", "none" ]} position="fixed" left="0" bottom="0" boxShadow="0 5px 10px black">
 
-            <Modal isOpen={isOpen} onClose={onClose} borderRadius="0" m="20px">
+            <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Search</ModalHeader>
+                <ModalContent borderRadius="0" m="20px" pb="20px">
+                    <ModalHeader fontSize="14px">Search products, orders and offers here</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <SearchBar />

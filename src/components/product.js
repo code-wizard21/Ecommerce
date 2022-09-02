@@ -1,4 +1,5 @@
 import { Badge, Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import StarRating from "./starRating"
 import { Link } from "react-router-dom"
 import { FiHeart } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,9 +28,12 @@ const Product = ({ product }) => {
                 <Image w="100%" src={product.thumbnail} alt="product" p="4" />
             </Link>
             <Box p="4" fontSize="14px">
-                <Flex px="5px" align="center">
-                    <Text fontSize="16px" fontWeight="600" me="10px">${product.price - ((product.discountPercentage/100) * product.price)}</Text>
-                    <Badge colorScheme="gray" textDecoration="line-through">${product.price}</Badge>
+                <Flex px="5px" align="center" justify="space-between">
+                    <Text fontSize="16px" fontWeight="600">
+                        ${product.price - ((product.discountPercentage/100) * product.price)}
+                        <Badge colorScheme="gray" ms="10px" textDecoration="line-through">${product.price}</Badge>
+                    </Text>
+                    <StarRating rating={product.rating} />
                 </Flex>
                 <Text my="20px" p="3px 6px" >{product.title}</Text>
                 <Flex>

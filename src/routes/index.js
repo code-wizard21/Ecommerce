@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Footer from "../components/footer";
 import MobileBottombar from "../components/bottombar";
 import Topbar from "../components/topbar";
@@ -18,6 +18,7 @@ const RoutesProvider = () => {
             <Topbar />
             <Routes>
                 <Route path="/" exact element={<Home />} />
+                <Route path="/home" exact element={<Navigate to="/" replace />} />
                 <Route path="/login" exact element={<Login />} />
                 <Route path="/register" exact element={<Register />} />
                 <Route path="/shop" exact element={<Shop />} />
