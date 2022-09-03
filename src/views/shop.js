@@ -2,9 +2,9 @@ import { Box, Button, Flex, Grid, HStack, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bg1 from "../assets/imgs/bg1.jpg"
-import bg2 from "../assets/imgs/bg2.jpg"
-import bg3 from "../assets/imgs/bg3.jpg"
+import bg1 from "../assets/imgs/bg1.webp"
+import bg2 from "../assets/imgs/bg2.webp"
+import bg3 from "../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
 import Product from "../components/product";
 

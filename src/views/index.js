@@ -3,9 +3,9 @@ import bgsofas1 from "../assets/imgs/bgsofas.webp"
 import bgsofas2 from "../assets/imgs/bgsofas1.webp"
 import bgsofas3 from "../assets/imgs/bgsofas3.webp"
 import bg from "../assets/imgs/bg.jpg"
-import bg1 from "../assets/imgs/bg1.jpg"
-import bg2 from "../assets/imgs/bg2.jpg"
-import bg3 from "../assets/imgs/bg3.jpg"
+import bg1 from "../assets/imgs/bg1.webp"
+import bg2 from "../assets/imgs/bg2.webp"
+import bg3 from "../assets/imgs/bg3.webp"
 import Heading from "../components/heading";
 import Product from "../components/product";
 import { data } from "../data/products";
