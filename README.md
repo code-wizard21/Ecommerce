@@ -20,7 +20,7 @@ Download [Git](https://git-scm.com)
 open up your terminal and clone this repository
 
 ```md
-git clone https://github.com/abel-otegbola/Quiz-app
+git clone https://github.com/abel-otegbola/Ecommerce
 ```
 
 open the folder 

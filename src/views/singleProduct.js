@@ -66,38 +66,16 @@ const SingleProduct = () => {
             <Box w={[ "auto", "auto", "50%" ]} mx={[ "20px", "20px", "10%" ]} mb="10%">
                 <Text fontSize="18px" fontWeight="700" my="20px" color="brand.900">DETAILS</Text>
 
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Dimension:</Text>
-                        <Text>{product.details.dimension}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Base:</Text>
-                        <Text>{product.details.base}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Base Material:</Text>
-                        <Text>{product.details.baseMaterial}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Brand:</Text>
-                        <Text>{product.details.brand}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Color:</Text>
-                        <Text>{product.details.color}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Country:</Text>
-                        <Text>{product.details.country}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Feature:</Text>
-                        <Text>{product.details.feature}</Text>
-                    </Flex>
-                    <Flex justify="space-between" py="2">
-                        <Text as="b">Style:</Text>
-                        <Text>{product.details.style}</Text>
-                    </Flex>
+                {
+                    Object.entries(product.details).map((item, index) => {
+                        return (
+                            <Flex key={index} justify="space-between" py="2">
+                                <Text as="b">{item[0]}:</Text>
+                                <Text>{item[1]}</Text>
+                            </Flex>                            
+                        )
+                    })  
+                }
             </Box>
         </>
     )
