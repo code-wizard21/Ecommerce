@@ -87,7 +87,7 @@ const Home = () => {
             <Box py="5%" px={[ null, "20px", "5%", "10%" ]}>
                 <Heading mainText={"HOT DEALS FOR YOU"} subText={"Our customers most loved products you can also get."} />
 
-                <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(4, 1fr)"]}>
+                <Grid gap={4} w="100%" templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}>
                 {
                     data.products.map(product => {
                         return (      

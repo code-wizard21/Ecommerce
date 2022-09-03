@@ -67,7 +67,7 @@ const Shop = () => {
                     </Box>
                 </Box>
                 <Box w={[ "100%", "100%", "75%" ]} p="2">
-                    <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}>
+                    <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}>
                     { products && 
                         products.map(product => {
                             return (      

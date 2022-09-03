@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Footer from "../components/footer";
-import MobileBottombar from "../components/bottombar";
+import MobileBottombar from "../components/bottomBar/bottombar";
 import Topbar from "../components/topbar";
 import Home from "../views/index";
 import Login from "../views/login";

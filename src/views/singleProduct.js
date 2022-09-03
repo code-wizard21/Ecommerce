@@ -1,9 +1,11 @@
-import { Box, Flex, Image, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react"
+import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react"
 import Heading from "../components/heading"
 import StarRating from "../components/starRating"
 import { data } from "../data/products"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
+import Slider from "react-slick"
+import CartWishlist from "../components/shopActions/cartWishlist"
 
 const SingleProduct = () => {
     const location = useLocation().search;
@@ -17,6 +19,18 @@ const SingleProduct = () => {
         setProduct(data.products[query.get("id") - 1]);
     }, [setProduct, query])
 
+    
+    var settings = {
+        autoplay: true,
+        autoplaySpeed: 4000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        speed: 500,
+        initialSlide: 2,
+        infinite: true
+    }
+
     return (
         <>
             <Heading mainText={"PRODUCT"} />
@@ -24,42 +38,66 @@ const SingleProduct = () => {
                 product &&
             <Flex justify="" flexWrap="wrap" mx={[ "20px", "20px", "10%"]} mb="5%">
                 <Box w={[ "100%", "100%", "40%"]}>
-                    <Image src={product.thumbnail} w="100%" alt="singleProduct" />
+                    <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
+                        {
+                            [product.thumbnail, ...product.images].map((item, index) => { 
+                                return (
+                                <Image src={item} key={index} w="100%" h="100%" alt="singleProduct" />
+                            )})
+                        }
+                    </Slider>
                 </Box>
 
                 <Box w={[ "100%", "100%", "60%" ]} py="5%" px={[ "0", "0", "10%" ]}>
                     <Text fontSize="25px" fontWeight="600" pb="20px">{product.title}</Text>
-                    <Text fontSize="30px" color="gray.500" pb="20px">${product.price}</Text>
+                    <Text fontSize="30px" color="gray.500" pb="20px">
+                        ${product.price - ((product.discountPercentage/100) * product.price)}
+                        <Badge colorScheme="gray" ms="10px" textDecoration="line-through">${product.price}</Badge>
+                    </Text>
                     <StarRating rating={product.rating} />
                     <Text my="20px" lineHeight="25px">{product.description}</Text>
                     <Text>CATEGORY: {product.category}</Text>
+
+                    <CartWishlist product={product} />
                 </Box>
             </Flex>
             }
 
-            <Box  mx={[ "20px", "20px", "10%"]} mb="10%">
-                <Tabs variant="enclosed">
-                    <TabList>
-                        <Tab>Details</Tab>
-                        <Tab>Images</Tab>
-                        <Tab>Reviews</Tab>
-                    </TabList>
-                    <TabPanels>
-                        <TabPanel>
-                            <Flex justify="space-between" py="2">
-                                <Text as="b">Dimension:</Text>
-                                <Text>{product.details.dimension}</Text>
-                            </Flex>
-                            <Text py="2" >Base: {product.details.base}</Text>
-                            <Text py="2" >Base Materials: {product.details.baseMaterial}</Text>
-                            <Text py="2" >Brand: {product.details.brand}</Text>
-                            <Text py="2" >Colors: {product.details.color}</Text>
-                            <Text py="2" >Country: {product.details.country}</Text>
-                            <Text py="2" >Features: {product.details.feature}</Text>
-                            <Text py="2" >Style: {product.details.style}</Text>
-                        </TabPanel>
-                    </TabPanels>
-                </Tabs>
+            <Box w={[ "auto", "auto", "50%" ]} mx={[ "20px", "20px", "10%" ]} mb="10%">
+                <Text fontSize="18px" fontWeight="700" my="20px" color="brand.900">DETAILS</Text>
+
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Dimension:</Text>
+                        <Text>{product.details.dimension}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Base:</Text>
+                        <Text>{product.details.base}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Base Material:</Text>
+                        <Text>{product.details.baseMaterial}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Brand:</Text>
+                        <Text>{product.details.brand}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Color:</Text>
+                        <Text>{product.details.color}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Country:</Text>
+                        <Text>{product.details.country}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Feature:</Text>
+                        <Text>{product.details.feature}</Text>
+                    </Flex>
+                    <Flex justify="space-between" py="2">
+                        <Text as="b">Style:</Text>
+                        <Text>{product.details.style}</Text>
+                    </Flex>
             </Box>
         </>
     )
