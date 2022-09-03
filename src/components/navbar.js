@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return(
         <>
-            <Button href="/"  me={[ "7px", "5px", 0 ]} bgColor="white" border="none" onClick={onOpen} minW="auto">
+            <Button href="/"  me={[ "7px", "5px", 0 ]} fontSize="20px" bgColor="white" border="none" onClick={onOpen} minW="auto">
                 <HiMenuAlt3 />
             </Button>
 
