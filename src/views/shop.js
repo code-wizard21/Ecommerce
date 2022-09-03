@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, HStack, Text } from "@chakra-ui/react"
+import { Box, Flex, Grid, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,6 +7,7 @@ import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
 import Product from "../components/product";
+import ShopFilters from "../components/shopActions/shopFilter";
 
 const Shop = () => {
     const products = useSelector((state) => state.data.products)
@@ -55,18 +56,8 @@ const Shop = () => {
             </Box>
 
             <Flex my="5%" mx={[ "20px", "20px", "5%" ]} flexWrap="wrap">
-                <Box w={[ "100%", "100%", "25%" ]} p="2">
-                    <Text p="20px" border="1px solid gray.100">Filter Products</Text>
-                    <Box p="20px" bgColor={"gray.100"}>
-                        <Text my="10px" fontWeight="600" color="brand.900">CATEGORIES</Text>
-                        <HStack spacing="4">
-                            <Button size="sm" colorScheme="facebook" variant="outline" borderRadius="0">Sofas</Button>
-                            <Button size="sm" colorScheme="facebook" variant="outline" borderRadius="0">Chairs</Button>
-                            <Button size="sm" colorScheme="facebook" variant="outline" borderRadius="0">Stands</Button>
-                        </HStack>
-                    </Box>
-                </Box>
-                <Box w={[ "100%", "100%", "75%" ]} p="2">
+                <ShopFilters />
+                <Box w={[ "100%", "100%", "75%" ]}>
                     <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}>
                     { products && 
                         products.map(product => {

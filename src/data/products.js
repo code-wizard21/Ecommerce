@@ -105,8 +105,5 @@ export const data = {
             thumbnail: tvBase04_01,
             images: [ tvBase04_02, tvBase04_03, tvBase04_04 ]
         }
-    ],
-    total: 15,
-    skip: 0,
-    limit: 30
+    ]
 }

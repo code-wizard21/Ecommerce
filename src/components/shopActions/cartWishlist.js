@@ -21,7 +21,7 @@ const CartWishlist = ({ product }) => {
     }, [cart, wishlist])
 
     return (
-        <Flex my="30px" w="100%">
+        <Flex mt="30px" w="100%">
             {
             cartIds &&
             (cartIds.indexOf(product.id) !== -1) ?
