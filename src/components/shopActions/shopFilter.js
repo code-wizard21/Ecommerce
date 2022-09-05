@@ -1,11 +1,11 @@
-import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Button, Checkbox, Flex, HStack, Input, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Select, Text } from "@chakra-ui/react";
+import { Accordion, AccordionButton, AccordionItem, AccordionPanel, Box, Button, Checkbox, Flex, RangeSlider, RangeSliderFilledTrack, RangeSliderThumb, RangeSliderTrack, Select, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
-const ShopFilters = () => {
+const ShopFilters = ({ handleFilters, clearFilters }) => {
     const [filters, setFilters] = useState({
         categories: [],
         brands: [],
-        price: [],
+        price: [0, 300],
         discount: 0
     })
 
@@ -39,8 +39,12 @@ const ShopFilters = () => {
         }
     }
 
+    const submitFilters = () => {
+        handleFilters(filters)
+    }
+
     return (
-        <Box w={[ "100%", "100%", "25%" ]} p="2" bgColor={"gray.100"}>
+        <Box w={[ "100%", "100%", "320px" ]} p="2" bgColor={"gray.100"}>
             <Text p="20px" border="1px solid gray.100">Filter Products</Text>
             <Accordion p="20px" bgColor="white">
                 <AccordionItem>
@@ -65,7 +69,7 @@ const ShopFilters = () => {
                     <AccordionPanel>
                         <Box>
                             {
-                                ["Mezzo", "Verun", "Amani", "VIivace"].map((item, index) => { return (
+                                ["Mezzo", "Verun", "Amani", "Vivace"].map((item, index) => { return (
                                     <Checkbox  key={index} p="2"
                                         value={item} 
                                         colorScheme="green"
@@ -81,8 +85,9 @@ const ShopFilters = () => {
                     <AccordionButton my="10px" fontWeight="600" color="brand.900">PRICE</AccordionButton>
                     <AccordionPanel>
                         <RangeSlider  
+                            max={500}
+                            aria-label={"price"}
                             colorScheme="green" 
-                            defaultValue={[10, 30]}
                             onChangeEnd={(val) => setFilters({ ...filters, price: val })}
                         >
                             <RangeSliderTrack>
@@ -91,16 +96,10 @@ const ShopFilters = () => {
                             <RangeSliderThumb index={0} />
                             <RangeSliderThumb index={1}/>
                         </RangeSlider>
-                        <HStack spacing={4}>
-                            <Box>
-                                <Text>Min</Text>
-                                <Input value="10" />
-                            </Box>
-                            <Box>
-                                <Text>Max</Text>
-                                <Input value="30" />
-                            </Box>
-                        </HStack>
+                        <Flex justify="space-between" w="100%">
+                            <Text>Min: {filters.price[0]}</Text>
+                            <Text>Max: {filters.price[1]}</Text>
+                        </Flex>
                     </AccordionPanel>
                 </AccordionItem>
 
@@ -121,8 +120,8 @@ const ShopFilters = () => {
             </Accordion>
 
             <Flex p="20px">
-                <Button bgColor="brand.900" color="white" flex="1" me="2" borderRadius="0">Apply filters</Button>
-                <Button bgColor="gray.100">Cancel</Button>
+                <Button bgColor="brand.900" color="white" flex="1" me="2" borderRadius="0" onClick={() => submitFilters()}>Apply filters</Button>
+                <Button bgColor="gray.100" onClick={() => clearFilters()}>Clear</Button>
             </Flex>
         </Box>
     )

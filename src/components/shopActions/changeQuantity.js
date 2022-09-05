@@ -1,5 +1,4 @@
 import { Button, Flex } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseCartQuantity, increaseCartQuantity } from "../../redux/slice/cartSlice";
@@ -7,10 +6,6 @@ import { decreaseCartQuantity, increaseCartQuantity } from "../../redux/slice/ca
 const ChangeQuantity = ({ product }) => {
     const dispatch = useDispatch();
     const cart = useSelector((state) => state.data.cart);
-
-    useEffect(() => {
-        console.log(product, cart)
-    })
 
     return (
         <Flex justify="flex-end" border="1px solid #e4e4e4" p="3px">

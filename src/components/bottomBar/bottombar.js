@@ -1,6 +1,6 @@
 import { Badge, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { BiStore } from "react-icons/bi";
-import { FiBell, FiHeart, FiHome, FiSearch } from "react-icons/fi"
+import { FiHeart, FiHome, FiSearch, FiShoppingCart } from "react-icons/fi"
 import { useLocation } from "react-router-dom";
 import SearchBar from "../searchbar";
 import { useSelector } from "react-redux"
@@ -11,6 +11,7 @@ const MobileBottombar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const location = useLocation().pathname;
     const wishlist = useSelector((state) => state.data.wishlist);
+    const cart = useSelector((state) => state.data.cart)
 
     const active = "brand.900"
 
@@ -65,10 +66,11 @@ const MobileBottombar = () => {
             </BottomNavLink>
             
             <BottomNavLink 
-                link="/"
-                activeLocations={["/notifications"]}
+                link="/cart"
+                activeLocations={["/cart"]}
             >
-                <FiBell />
+                <FiShoppingCart />
+                <Badge color="white" bgColor="brand.900" position="absolute" top="5px" right="5px" borderRadius="10px" border="2px solid white">{cart.length}</Badge>
             </BottomNavLink>
             
             <BottomNavLink 

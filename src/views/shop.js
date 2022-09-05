@@ -8,9 +8,11 @@ import bg3 from "../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
 import Product from "../components/product";
 import ShopFilters from "../components/shopActions/shopFilter";
+import { useEffect, useState } from "react";
 
 const Shop = () => {
-    const products = useSelector((state) => state.data.products)
+    const [products, setProducts] = useState([])
+    const defaultProducts = useSelector((state) => state.data.products)
 
     var settings = {
         autoplay: true,
@@ -30,6 +32,22 @@ const Shop = () => {
                 }
             }
         ]
+    }
+
+    useEffect(() => {
+        setProducts(defaultProducts)
+    }, [setProducts, defaultProducts])
+
+    const handleFilters = (filters) => {
+        const filteredProducts = defaultProducts.filter(product => 
+            (filters.categories.indexOf(product.category) !== -1) &&
+            (filters.brands.indexOf(product.details.brand) !== -1) && 
+            (filters.price[0] <= product.price && filters.price[1] >= product.price) && 
+            (filters.discount <= product.discountPercentage)
+        )
+
+        console.log(filters, filteredProducts)
+        setProducts(filteredProducts)
     }
 
 
@@ -56,8 +74,10 @@ const Shop = () => {
             </Box>
 
             <Flex my="5%" mx={[ "20px", "20px", "5%" ]} flexWrap="wrap">
-                <ShopFilters />
-                <Box w={[ "100%", "100%", "75%" ]}>
+
+                <ShopFilters handleFilters={handleFilters} clearFilters={() => setProducts(defaultProducts)}/>
+
+                <Box w={[ "100%", "100%", "auto" ]} flex="1">
                     <Grid gap={4} templateColumns={["repeat(1, 1fr)","repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]}>
                     { products && 
                         products.map(product => {
