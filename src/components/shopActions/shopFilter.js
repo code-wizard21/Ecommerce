@@ -5,7 +5,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
     const [filters, setFilters] = useState({
         categories: [],
         brands: [],
-        price: [0, 300],
+        price: [0, 500],
         discount: 0
     })
 
@@ -52,7 +52,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                     <AccordionPanel>
                         <Box>
                             {
-                                ["Sofas", "Stands", "Chairs"].map((item, index) => { return (
+                                ["Sofas", "Stands"].map((item, index) => { return (
                                     <Checkbox  key={index} p="2"
                                         value={item} 
                                         colorScheme="green"
@@ -69,7 +69,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                     <AccordionPanel>
                         <Box>
                             {
-                                ["Mezzo", "Verun", "Amani", "Vivace"].map((item, index) => { return (
+                                ["Mezzo", "Verun"].map((item, index) => { return (
                                     <Checkbox  key={index} p="2"
                                         value={item} 
                                         colorScheme="green"
@@ -87,7 +87,8 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                         <RangeSlider  
                             max={500}
                             aria-label={"price"}
-                            colorScheme="green" 
+                            colorScheme="green"
+                            defaultValue={[0, 500]}
                             onChangeEnd={(val) => setFilters({ ...filters, price: val })}
                         >
                             <RangeSliderTrack>
