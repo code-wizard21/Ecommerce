@@ -70,7 +70,14 @@ const MobileBottombar = () => {
                 activeLocations={["/cart"]}
             >
                 <FiShoppingCart />
-                <Badge color="white" bgColor="brand.900" position="absolute" top="5px" right="5px" borderRadius="10px" border="2px solid white">{cart.length}</Badge>
+                <Badge 
+                    color="white" 
+                    bgColor="brand.900" 
+                    px="5px" 
+                    position="absolute" top="5px" right="5px" 
+                    borderRadius="10px" 
+                    border="2px solid white"
+                >{cart.length}</Badge>
             </BottomNavLink>
             
             <BottomNavLink 

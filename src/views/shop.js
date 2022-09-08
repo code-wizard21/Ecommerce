@@ -9,30 +9,12 @@ import { useSelector } from "react-redux";
 import Product from "../components/product";
 import ShopFilters from "../components/shopActions/shopFilter";
 import { useEffect, useState } from "react";
+import { shopSliderSettings } from "../utils/sliderSettings";
 
 const Shop = () => {
     const [products, setProducts] = useState([])
     const defaultProducts = useSelector((state) => state.data.products)
 
-    var settings = {
-        autoplay: true,
-        autoplaySpeed: 4000,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        speed: 500,
-        initialSlide: 2,
-        infinite: true,
-        responsive: [
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    initialSlide: 1
-                }
-            }
-        ]
-    }
 
     useEffect(() => {
         setProducts(defaultProducts)
@@ -43,10 +25,8 @@ const Shop = () => {
             (filters.categories.indexOf(product.category) !== -1) &&
             (filters.brands.indexOf(product.details.brand) !== -1) && 
             (filters.price[0] <= product.price && filters.price[1] >= product.price) && 
-            (filters.discount <= product.discountPercentage)
+            (parseFloat(filters.discount) <= product.discountPercentage)
         )
-
-        console.log(filters, filteredProducts)
         setProducts(filteredProducts)
     }
 
@@ -54,7 +34,7 @@ const Shop = () => {
     return (
         <Box>
             <Box justify="center" w="100%">
-                <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
+                <Slider { ...shopSliderSettings } style={{ width: "100%", overflow: "hidden" }}>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg1})`} backgroundSize="cover" bgPosition="50%, 75%">
                         <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
                             <Text mt="30px" fontSize="20px" fontWeight="700" color="brand.900">Get as low as 60% discount on our chairs</Text>

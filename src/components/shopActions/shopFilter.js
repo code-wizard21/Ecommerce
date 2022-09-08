@@ -3,8 +3,8 @@ import { useState } from "react";
 
 const ShopFilters = ({ handleFilters, clearFilters }) => {
     const [filters, setFilters] = useState({
-        categories: [],
-        brands: [],
+        categories: ["Sofas", "Stands"],
+        brands: ["Mezzo", "Verun"],
         price: [0, 500],
         discount: 0
     })
@@ -40,6 +40,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
     }
 
     const submitFilters = () => {
+        console.log(filters)
         handleFilters(filters)
     }
 
@@ -57,6 +58,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                                         value={item} 
                                         colorScheme="green"
                                         onChange={(e) => handleCategories(e)}
+                                        checked={true}
                                         > {item}</Checkbox>
                                 )})
                             }
@@ -74,6 +76,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                                         value={item} 
                                         colorScheme="green"
                                         onChange={(e) => handleBrands(e)}
+                                        checked={true}
                                         > {item}</Checkbox>
                                 )})
                             }
@@ -110,7 +113,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                     <AccordionPanel>
                         <Select onChange={(e) => setFilters({ ...filters, discount: e.target.value })}>
                             {
-                                [50, 40, 30, 20, 10].map((item, index) => { return (
+                                [10, 20, 30, 40, 50].map((item, index) => { return (
                                     <option key={index} value={item}>{item}% or more</option>
                                 ) })
                             }

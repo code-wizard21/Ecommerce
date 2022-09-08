@@ -9,30 +9,23 @@ import bg3 from "../assets/imgs/bg3.webp"
 import Heading from "../components/heading";
 import Product from "../components/product";
 import { data } from "../data/products";
-import { FiAlertOctagon, FiHeadphones, FiTruck } from "react-icons/fi";
+import { FcShipped } from "react-icons/fc"
+import { BiBadgeCheck } from "react-icons/bi";
+import { IoMdHeadset } from "react-icons/io"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeroSection from "../components/heroSection";
+import { homeInfoSettings, homeSliderSettings } from "../utils/sliderSettings";
 
 
 const Home = () => {
-    var settings = {
-        autoplay: true,
-        autoplaySpeed: 4000,
-        slidesToShow: 1,
-        dots: true,
-        slidesToScroll: 1,
-        speed: 500,
-        initialSlide: 2,
-        infinite: true
-    }
 
     return (
         <Box>
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
-                    <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
+                    <Slider { ...homeSliderSettings } style={{ width: "100%", overflow: "hidden" }}>
                         <Box w="100%" h="600px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage">
                         </Box>
                         <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
@@ -42,21 +35,28 @@ const Home = () => {
                 <HeroSection mainText={"Minimalistic and Modern Interior."} subText={"Upgrade your personality with our quality products. You can never go wrong with any of our products."} />
             </Flex>
 
-            <Box p={[ "10px", "40px"]} bgColor="gray.100">
-                <Flex justify="space-around" flexWrap="wrap">
-                    <Link href="#" display="flex" color="brand.900" alignItems="center" mx="4" my={[ "15px", null ]}>
-                        <FiTruck style={{ fontSize:"30px" }} />
-                        <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
-                    </Link>
-                    <Link href="#" display="flex" color="brand.900" alignItems="center" mx="4" my={[ "15px", null ]}>
-                        <FiHeadphones style={{ fontSize:"30px" }}  />
-                        <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
-                    </Link>
-                    <Link href="#" display="flex" color="brand.900" alignItems="center" mx="4" my={[ "15px", null ]}>
-                        <FiAlertOctagon style={{ fontSize:"30px" }}  />
-                        <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
-                    </Link>
-                </Flex>
+            <Box p={[ "10px", "40px"]} px={["20px", "20px", "10%"]} bgColor="gray.100">
+                <Slider { ...homeInfoSettings } style={{ width: "100%", overflow: "hidden" }}>
+                    <Box>
+                        <Flex color="brand.900" align="center" mx="4" my={[ "15px", null ]}>
+                            <FcShipped style={{ fontSize:"30px" }} />
+                            <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
+                        </Flex>
+                    </Box>
+                    <Box>
+                        <Flex color="darkgreen" align="center" justify="center" mx="4" my={[ "15px", null ]}>
+                            <IoMdHeadset style={{ fontSize:"30px" }}  />
+                            <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
+                        </Flex>
+                    </Box>
+                    <Box>
+                        <Flex 
+                        color="darkgreen" align="center" justify="flex-end" mx="4" my={[ "15px", null ]}>
+                            <BiBadgeCheck style={{ fontSize:"30px" }}  />
+                            <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
+                        </Flex>
+                    </Box>
+                </Slider>
             </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">

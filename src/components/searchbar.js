@@ -24,7 +24,7 @@ const SearchBar = () => {
                 <FaSearch />
             </Link>
 
-            <Box position="absolute" top="100%" left="0" w="100%" p="2" bgColor="white" shadow="sm" zIndex="10000">
+            <Box position="absolute" top="100%" left="0" w="100%" bgColor="white" shadow="sm" zIndex="10000">
                 {
                     products && products.filter(product => ( query !== "" && product.title.toUpperCase().indexOf(query.toUpperCase()) !== -1)).map(item => {
                         return (

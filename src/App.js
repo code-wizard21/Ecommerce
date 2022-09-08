@@ -3,7 +3,7 @@ import RoutesProvider from "./routes";
 
 const colors = {
   brand: {
-    900: "rgb(25, 170, 109)",
+    900: "#5fc028",
     800: "rgb(25, 130, 109)"
   }
 }
