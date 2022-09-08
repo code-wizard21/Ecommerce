@@ -38,21 +38,21 @@ const Home = () => {
             <Box p={[ "10px", "40px"]} px={["20px", "20px", "10%"]} bgColor="gray.100">
                 <Slider { ...homeInfoSettings } style={{ width: "100%", overflow: "hidden" }}>
                     <Box>
-                        <Flex color="brand.900" align="center" mx="4" my={[ "15px", null ]}>
-                            <FcShipped style={{ fontSize:"30px" }} />
+                        <Flex color="brand.900" align="flex-end" mx="4" my={[ "15px", null ]}>
+                            <FcShipped style={{ fontSize:"20px" }} />
                             <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
                         </Flex>
                     </Box>
                     <Box>
-                        <Flex color="darkgreen" align="center" justify="center" mx="4" my={[ "15px", null ]}>
-                            <IoMdHeadset style={{ fontSize:"30px" }}  />
+                        <Flex color="darkgreen" align="flex-end" justify="center" mx="4" my={[ "15px", null ]}>
+                            <IoMdHeadset style={{ fontSize:"20px" }}  />
                             <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
                         </Flex>
                     </Box>
                     <Box>
                         <Flex 
-                        color="darkgreen" align="center" justify="flex-end" mx="4" my={[ "15px", null ]}>
-                            <BiBadgeCheck style={{ fontSize:"30px" }}  />
+                        color="darkgreen" align="flex-end" justify="flex-end" mx="4" my={[ "15px", null ]}>
+                            <BiBadgeCheck style={{ fontSize:"20px" }}  />
                             <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
                         </Flex>
                     </Box>
