@@ -52,7 +52,7 @@ const MobileBottombar = () => {
 
             <BottomNavLink 
                 link="/shop"
-                activeLocations={["/shop", "/cart", "/checkout", "/order", "/singleProduct"]}
+                activeLocations={["/shop", "/singleProduct"]}
             >
                 <BiStore />
             </BottomNavLink>
@@ -67,7 +67,7 @@ const MobileBottombar = () => {
             
             <BottomNavLink 
                 link="/cart"
-                activeLocations={["/cart"]}
+                activeLocations={["/cart", "/checkout", "/order"]}
             >
                 <FiShoppingCart />
                 <Badge 

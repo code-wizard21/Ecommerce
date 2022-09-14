@@ -1,7 +1,5 @@
 import { Badge, Box, Flex, Grid, Image, Input, Link, Text } from "@chakra-ui/react";
-import bgsofas1 from "../assets/imgs/bgsofas.webp"
-import bgsofas2 from "../assets/imgs/bgsofas1.webp"
-import bgsofas3 from "../assets/imgs/bgsofas3.webp"
+import bgsofas2 from "../assets/imgs/bgsofas.webp"
 import bg from "../assets/imgs/bg.jpg"
 import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
@@ -16,7 +14,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeroSection from "../components/heroSection";
-import { homeInfoSettings, homeSliderSettings } from "../utils/sliderSettings";
+import { homeInfoSettings } from "../utils/sliderSettings";
 
 
 const Home = () => {
@@ -25,12 +23,7 @@ const Home = () => {
         <Box>
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
-                    <Slider { ...homeSliderSettings } style={{ width: "100%", overflow: "hidden" }}>
-                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas1})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage">
-                        </Box>
-                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
-                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas3})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
-                    </Slider>
+                    <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                 </Box>
                 <HeroSection mainText={"Minimalistic and Modern Interior."} subText={"Upgrade your personality with our quality products. You can never go wrong with any of our products."} />
             </Flex>
@@ -38,20 +31,19 @@ const Home = () => {
             <Box p={[ "10px", "40px"]} px={["20px", "20px", "10%"]} bgColor="gray.100">
                 <Slider { ...homeInfoSettings } style={{ width: "100%", overflow: "hidden" }}>
                     <Box>
-                        <Flex color="brand.900" align="flex-end" mx="4" my={[ "15px", null ]}>
+                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
                             <FcShipped style={{ fontSize:"20px" }} />
                             <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
                         </Flex>
                     </Box>
                     <Box>
-                        <Flex color="darkgreen" align="flex-end" justify="center" mx="4" my={[ "15px", null ]}>
+                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
                             <IoMdHeadset style={{ fontSize:"20px" }}  />
                             <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
                         </Flex>
                     </Box>
                     <Box>
-                        <Flex 
-                        color="darkgreen" align="flex-end" justify="flex-end" mx="4" my={[ "15px", null ]}>
+                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
                             <BiBadgeCheck style={{ fontSize:"20px" }}  />
                             <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
                         </Flex>
@@ -60,7 +52,7 @@ const Home = () => {
             </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
-                <Heading mainText={"GET AWESOME DISCOUNTS ON ALL PURCHASE"} subText={"Get our awesome discounts now when you purchase."} />
+                <Heading mainText={"GET AWESOME DISCOUNTS ON ALL PURCHASE"} subText={"Offers, Incentives and discounts all for you."} />
                 <Flex justify="space-between" flexWrap="wrap" px={[ "20px", "20px", null ]}>
                     <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
                         <Box p="50px">
