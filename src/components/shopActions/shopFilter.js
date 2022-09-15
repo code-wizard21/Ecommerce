@@ -58,7 +58,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                                         value={item} 
                                         colorScheme="green"
                                         onChange={(e) => handleCategories(e)}
-                                        checked={true}
+                                        defaultChecked
                                         > {item}</Checkbox>
                                 )})
                             }
@@ -76,7 +76,7 @@ const ShopFilters = ({ handleFilters, clearFilters }) => {
                                         value={item} 
                                         colorScheme="green"
                                         onChange={(e) => handleBrands(e)}
-                                        checked={true}
+                                        defaultChecked
                                         > {item}</Checkbox>
                                 )})
                             }

@@ -19,8 +19,8 @@ export const data = {
     products: [
         {
             id: 1,
-            title: "Nook Lounge Chair",
-            description: "The Nook lounge chair is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
+            title: "Nook Lounge Stand",
+            description: "The Nook lounge stand is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
             details: {
                 dimension: "L-530mm x W-510mm x H-700mm, SH-450mm",
                 base: "With legs",
@@ -35,14 +35,14 @@ export const data = {
             discountPercentage: 30,
             rating: 3.69,
             stock: 94,
-            category: "Sofas",
+            category: "Stands",
             thumbnail: tvBase01_03,
             images: [ tvBase01_02, tvBase01_01 ]
         },
         {
             id: 2,
-            title: "Capitol Complex Chair",
-            description: "The Capitol Complex chair is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
+            title: "Capitol Complex Stand",
+            description: "The Capitol Complex stand is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
             details: {
                 dimension: "L-530mm x W-510mm x H-700mm, SH-450mm",
                 base: "With legs",
@@ -63,8 +63,8 @@ export const data = {
         },
         {
             id: 3,
-            title: "Ashby Dining Chair",
-            description: "The Ashby dining chair is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
+            title: "Ashby Dining Sofa",
+            description: "The Ashby dining sofa is the best for you. You can never go wrong with any of our products. All have been created by our amazing designers to bring you the best you can get.",
             details: {
                 dimension: "L-530mm x W-510mm x H-700mm, SH-450mm",
                 base: "With legs",
@@ -79,7 +79,7 @@ export const data = {
             discountPercentage: 20,
             rating: 5.0,
             stock: 14,
-            category: "Stands",
+            category: "Sofas",
             thumbnail: tvBase03_01,
             images: [ tvBase03_02, tvBase03_03, tvBase03_04 ]
         },
