@@ -66,7 +66,7 @@ const Register = () => {
 
                 <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Sign up</Button>
 
-                <Text mt="4">Already have an account? <Link href="/login" color="brand.900">Login</Link></Text>
+                <Text mt="4">Already have an account? <Link href="/Login" color="brand.900">Login</Link></Text>
             </Box>
             </Flex>
         </Flex>

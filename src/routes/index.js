@@ -18,14 +18,14 @@ const RoutesProvider = () => {
             <Topbar />
             <Routes>
                 <Route path="/" exact element={<Home />} />
-                <Route path="/home" exact element={<Navigate to="/" replace />} />
-                <Route path="/login" exact element={<Login />} />
-                <Route path="/register" exact element={<Register />} />
-                <Route path="/shop" exact element={<Shop />} />
-                <Route path="/cart" exact element={<Cart />} />
-                <Route path="/checkout" exact element={<Checkout />} />
-                <Route path="/wishlist" exact element={<Wishlist />} />
-                <Route path="/singleProduct" exact element={<SingleProduct />} />
+                <Route path="/Home" exact element={<Navigate to="/" replace />} />
+                <Route path="/Login" exact element={<Login />} />
+                <Route path="/Register" exact element={<Register />} />
+                <Route path="/Shop" exact element={<Shop />} />
+                <Route path="/Cart" exact element={<Cart />} />
+                <Route path="/Checkout" exact element={<Checkout />} />
+                <Route path="/Wishlist" exact element={<Wishlist />} />
+                <Route path="/SingleProduct" exact element={<SingleProduct />} />
             </Routes>
             <MobileBottombar />
             <Footer />

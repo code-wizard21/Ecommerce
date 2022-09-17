@@ -51,8 +51,8 @@ const MobileBottombar = () => {
             </Text>
 
             <BottomNavLink 
-                link="/shop"
-                activeLocations={["/shop", "/singleProduct"]}
+                link="/Shop"
+                activeLocations={["/Shop", "/SingleProduct"]}
             >
                 <BiStore />
             </BottomNavLink>
@@ -60,14 +60,14 @@ const MobileBottombar = () => {
             
             <BottomNavLink 
                 link="/"
-                activeLocations={["/", "/login", "/register", "/account"]}
+                activeLocations={["/", "/Login", "/Register", "/Account"]}
             >
                 <FiHome />
             </BottomNavLink>
             
             <BottomNavLink 
-                link="/cart"
-                activeLocations={["/cart", "/checkout", "/order"]}
+                link="/Cart"
+                activeLocations={["/Cart", "/Checkout", "/Order"]}
             >
                 <FiShoppingCart />
                 <Badge 
@@ -81,8 +81,8 @@ const MobileBottombar = () => {
             </BottomNavLink>
             
             <BottomNavLink 
-                link="/wishlist"
-                activeLocations={["/wishlist"]}
+                link="/Wishlist"
+                activeLocations={["/Wishlist"]}
             >
                 <FiHeart />
                 {

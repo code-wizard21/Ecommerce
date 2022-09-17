@@ -49,7 +49,7 @@ const Login = () => {
 
                     <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Login</Button>
 
-                    <Text mt="4">Don't have an account yet? <Link href="/register" color="brand.900">Sign up</Link></Text>
+                    <Text mt="4">Don't have an account yet? <Link href="/Register" color="brand.900">Sign up</Link></Text>
                 </Box>
             </Flex>
         </Flex>

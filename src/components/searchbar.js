@@ -29,7 +29,7 @@ const SearchBar = () => {
                     products && products.filter(product => ( query !== "" && product.title.toUpperCase().indexOf(query.toUpperCase()) !== -1)).map(item => {
                         return (
                             <Box p="2" key={item.id}>
-                                <SearchLink to={`/singleProduct?id=${item.id}`}>{item.title}</SearchLink>
+                                <SearchLink to={`/SingleProduct?id=${item.id}`}>{item.title}</SearchLink>
                             </Box>
                         )
                     })

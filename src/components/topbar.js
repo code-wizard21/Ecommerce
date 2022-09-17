@@ -35,23 +35,23 @@ const Topbar = () => {
 
                 <Flex align="center" justify="flex-end" w="22%">
                     <Link 
-                        href="/cart"
+                        href="/Cart"
                         p="2" 
                         fontSize="18px" 
                         display={[ "none", "none", "flex" ]} 
                         me={6} position="relative" 
-                        style={ (location === "/cart") ? active : {color:""} } 
+                        style={ (location === "/Cart") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="cart"
                     >
                         <FiShoppingCart /><Badge color="white" bgColor="brand.900" position="absolute" top="0" right="-5px">{cart.length}</Badge>
                     </Link>
                     
                     <Link 
-                        href="/login" 
+                        href="/Login" 
                         p="2" 
                         fontSize="18px" 
                         me={6} 
-                        style={ (location === "/login" || location === "/register") ? active : {color:""} } 
+                        style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="account"
                     >
                         <FiUser />
