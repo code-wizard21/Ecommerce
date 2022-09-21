@@ -6,12 +6,12 @@ const NavLink = ({ navLocation, children }) => {
 
 
     return (
-        <Text display="flex">
+        <Box display="flex">
             <Link href={`/${navLocation}`} py="2" display="flex" alignItems="center" w="100%" color={(location === `/${navLocation}`) ? "brand.900" : ""}  _hover={{ color: "brand.900" }}>
-                <Box me="3" color="gray.400" >{children}</Box>
+                <Text me="3" color="gray.400" >{children}</Text>
                 {navLocation}
             </Link>
-        </Text>
+        </Box>
     )
 }
 

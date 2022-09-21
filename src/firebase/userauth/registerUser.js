@@ -11,7 +11,9 @@ import { auth, db, detectUser } from './auth';
 export const registerWithEmailAndPassword = async (name, email, password) => {
     const q = query(collection(db, "users"), where("email", "==", email));
     const docs = await getDocs(q);
+    console.log(email)
     if (docs.docs.length === 0) {
+        console.log("checked")
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password);
             const user = res.user;
