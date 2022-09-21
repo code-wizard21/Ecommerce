@@ -2,9 +2,16 @@ import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, 
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
 import bg from "../assets/imgs/bg.jpg"
+import { logInWithEmailAndPassword } from "../firebase/userauth/emailAuth";
 
 const Login = () => {
     const [ type, setType ] = useState(true)
+    const [ email, setEmail ] = useState("")
+    const [ password, setPassword ] = useState("")
+
+    const handleLogin = () => {
+        logInWithEmailAndPassword(email, password)
+    }
 
     return (
         <Flex m="20px" justify="center" fontSize="14px" backgroundImage={`url(${bg})`} bgSize="cover">
@@ -21,7 +28,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaEnvelope />
                             </Button>
-                            <Input type="email" fontSize="14px" borderRadius="0" border="none" />
+                            <Input type="email" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)}/>
                         </Flex>
                     </FormControl>
 
@@ -32,7 +39,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaLock />
                             </Button>
-                            <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" />
+                            <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
                             <Button p="3" border="1px" borderRadius="0" borderColor="gray.100" bgColor="white" onClick={() => setType(!type)}>
                                 <FaEye />
                             </Button>
@@ -47,7 +54,7 @@ const Login = () => {
                         <Link w="150px" fontSize="12px" color="red">Forgot password?</Link>
                     </Flex>
 
-                    <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Login</Button>
+                    <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }} onClick={() => handleLogin()}>Login</Button>
 
                     <Text mt="4">Don't have an account yet? <Link href="/Register" color="brand.900">Sign up</Link></Text>
                 </Box>

@@ -2,10 +2,18 @@ import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button }
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock, FaUser } from "react-icons/fa";
 import bg from "../assets/imgs/bg.jpg"
+import { registerWithEmailAndPassword } from "../firebase/userauth/registerUser";
 
 const Register = () => {
     const [ type, setType ] = useState(true)
     const [ cpasswordtype, setCpasswordtype ] = useState(true)
+    const [ fullname, setFullName ] = useState("")
+    const [ email, setEmail ] = useState("")
+    const [ password, setPassword ] = useState("")
+
+    const handleRegister = () => {
+        registerWithEmailAndPassword(fullname, email, password)
+    }
 
     return (
         <Flex m="20px" justify="center" fontSize="14px" backgroundImage={`url(${bg})`} bgSize="cover">
@@ -21,7 +29,7 @@ const Register = () => {
                         <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                             <FaUser />
                         </Button>
-                        <Input type="text" fontSize="14px" borderRadius="0" border="none" />
+                        <Input type="text" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setFullName(e.target.value)} />
                     </Flex>
                 </FormControl>
 
@@ -32,7 +40,7 @@ const Register = () => {
                         <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                             <FaEnvelope />
                         </Button>
-                        <Input type="email" fontSize="14px" borderRadius="0" border="none" />
+                        <Input type="email" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)} />
                     </Flex>
                 </FormControl>
 
@@ -43,7 +51,7 @@ const Register = () => {
                         <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                             <FaLock />
                         </Button>
-                        <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" />
+                        <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
                         <Button p="3" border="1px" borderRadius="0" borderColor="gray.100" bgColor="white" onClick={() => setType(!type)}>
                             <FaEye />
                         </Button>
@@ -64,7 +72,7 @@ const Register = () => {
                     </Flex>
                 </FormControl>
 
-                <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }}>Sign up</Button>
+                <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }} onClick={() => handleRegister()}>Sign up</Button>
 
                 <Text mt="4">Already have an account? <Link href="/Login" color="brand.900">Login</Link></Text>
             </Box>
