@@ -1,20 +1,37 @@
-import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Switch } from "@chakra-ui/react"
+import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Switch } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
-import bg from "../assets/imgs/bg.jpg"
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { logInWithEmailAndPassword } from "../firebase/userauth/emailAuth";
+import { auth } from "../firebase/userauth/auth";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../redux/slice/authSlice";
 
 const Login = () => {
     const [ type, setType ] = useState(true)
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
+    const [ user, loading, error ] = useAuthState(auth)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handleLogin = () => {
         logInWithEmailAndPassword(email, password)
+        if(loading) {
+            console.log("loading")
+        }
+        if(user) {
+            dispatch(userLogin(user))
+            navigate("/shop")
+        }
+        if(error) {
+            console.log(error)
+        }
     }
 
     return (
-        <Flex m="20px" justify="center" fontSize="14px" backgroundImage={`url(${bg})`} bgSize="cover">
+        <Flex m="20px" justify="center" fontSize="14px">
             <Flex justify="center" w="100%" bgColor="whiteAlpha.500">
                 <Box w={[ "100%", "400px", "500px" ]} p="20px" m="20px" bgColor="white">
                     <Heading textAlign="center">Welcome back!</Heading>

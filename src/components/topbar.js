@@ -1,4 +1,4 @@
-import { Badge, Box, Flex, Image, Link } from "@chakra-ui/react";
+import { Avatar, Badge, Box, Flex, Image, Link } from "@chakra-ui/react";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
@@ -9,6 +9,7 @@ import logo from "../assets/imgs/logo.png"
 const Topbar = () => {
     const location = useLocation().pathname;
     const cart = useSelector((state) => state.data.cart)
+    const user = useSelector((state) => state.data.user)
     const active = {
         color: "brand.900"
     }
@@ -54,7 +55,8 @@ const Topbar = () => {
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="account"
                     >
-                        <FiUser />
+                        { (user === null) ? <FiUser /> : <Avatar size={"sm"} colorScheme="green" /> }
+                        
                     </Link>
                     
                     <Navbar />
