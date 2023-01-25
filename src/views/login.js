@@ -1,33 +1,25 @@
 import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Switch } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { logInWithEmailAndPassword } from "../firebase/userauth/emailAuth";
-import { auth } from "../firebase/userauth/auth";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { signIn } from "../firebase";
 import { userLogin } from "../redux/slice/authSlice";
 
 const Login = () => {
     const [ type, setType ] = useState(true)
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
-    const [ user, loading, error ] = useAuthState(auth)
-    const navigate = useNavigate()
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
-    const handleLogin = () => {
-        logInWithEmailAndPassword(email, password)
-        if(loading) {
-            console.log("loading")
-        }
-        if(user) {
-            dispatch(userLogin(user))
-            navigate("/shop")
-        }
-        if(error) {
-            console.log(error)
-        }
+    const handleLogin = async () => {
+        signIn(email, password)
+        .then(result => {
+            dispatch(userLogin(result.email));
+            navigate("/dashboard")
+        })
+        .catch(error => console.log(error))
     }
 
     return (
