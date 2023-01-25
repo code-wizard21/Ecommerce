@@ -10,9 +10,13 @@ import Cart from "../views/cart";
 import Checkout from "../views/checkout";
 import Wishlist from "../views/wishlist";
 import SingleProduct from "../views/singleProduct";
+import Dashboard from "../views/dashboard";
+import { useSelector } from "react-redux";
 
 
 const RoutesProvider = () => {
+    const user = useSelector(state => state.data.user);
+
     return ( 
         <BrowserRouter>
             <Topbar />
@@ -26,6 +30,9 @@ const RoutesProvider = () => {
                 <Route path="/Checkout" exact element={<Checkout />} />
                 <Route path="/Wishlist" exact element={<Wishlist />} />
                 <Route path="/SingleProduct" exact element={<SingleProduct />} />
+
+                <Route path="/Logout" exact element={<Navigate to="/Login" replace />} />
+                <Route path={"/Dashboard"} exact element={user.email ? <Dashboard /> : <Navigate to="/Login" replace />} />
             </Routes>
             <MobileBottombar />
             <Footer />
