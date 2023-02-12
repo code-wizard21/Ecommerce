@@ -1,11 +1,11 @@
 import { Badge, Box, Flex, Grid, Image, Input, Link, Text } from "@chakra-ui/react";
+import React, { Suspense } from "react";
 import bgsofas2 from "../assets/imgs/bgsofas.webp"
 import bg from "../assets/imgs/bg.jpg"
 import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
 import Heading from "../components/heading";
-import Product from "../components/product";
 import { data } from "../data/products";
 import { FcShipped } from "react-icons/fc"
 import { BiBadgeCheck } from "react-icons/bi";
@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 import HeroSection from "../components/heroSection";
 import { homeInfoSettings } from "../utils/sliderSettings";
 
+const Product = React.lazy(() => import('../components/product'))
 
 const Home = () => {
 
@@ -82,8 +83,10 @@ const Home = () => {
                 <Grid gap={4} w="100%" templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}>
                 {
                     data.products.map(product => {
-                        return (      
-                            <Product key={product.id} product={product} />
+                        return (  
+                            <Suspense fallback={<div>Loading...</div>}>
+                                <Product key={product.id} product={product} />
+                            </Suspense>   
                         )
                     })
                 }
@@ -97,7 +100,7 @@ const Home = () => {
                         <Text fontSize="14px" fontWeight="600" mb="35px">Purpose of a furniture is to keep you comfortable while also beautifying your home</Text>
                         <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="brand.900" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                     </Box>
-                    <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" />
+                    <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" loading="lazy" />
                 </Flex>
             </Box>
 
