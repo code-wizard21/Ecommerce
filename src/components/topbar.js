@@ -55,7 +55,7 @@ const Topbar = () => {
                     <Link 
                         href={user.email ? "/dashboard" : "/Login"} 
                         p="2" 
-                        fontSize="18px" 
+                        fontSize="14px" 
                         me={6} 
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="account"

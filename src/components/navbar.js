@@ -74,12 +74,15 @@ const Navbar = () => {
                                     <FaCog />
                                 </NavLink>
                             </Box>
-                            <Box fontWeight="600" my="2">
-                                <Box display="flex" navLocation={"Logout"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
-                                    <FaSignOutAlt />
-                                    <Text me="3" color="gray.400" >Logout</Text>
+                            {
+                                (!user.email) ? "" :
+                                <Box fontWeight="600" my="2">
+                                    <Box display="flex" navLocation={"Logout"} cursor={"pointer"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
+                                        <FaSignOutAlt />
+                                        <Text me="3" ml={"10px"} >Logout</Text>
+                                    </Box>
                                 </Box>
-                            </Box>
+                            }
                         </Box>
                         
 
