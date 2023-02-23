@@ -84,7 +84,7 @@ const Home = () => {
                 {
                     data.products.map(product => {
                         return (  
-                            <Suspense fallback={<div>Loading...</div>}>
+                            <Suspense key={product.id} fallback={<div>Loading...</div>}>
                                 <Product key={product.id} product={product} />
                             </Suspense>   
                         )

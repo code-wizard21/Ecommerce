@@ -17,7 +17,7 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             dispatch(userLogin(result.email));
-            navigate("/dashboard")
+            navigate("/Home")
         })
         .catch(error => console.log(error))
     }
