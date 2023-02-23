@@ -7,7 +7,7 @@ import SocialLinks from "./sociallinks";
 import NavLink from "./navLink";
 import { BiStore } from "react-icons/bi";
 import { FaCog, FaSignOutAlt } from "react-icons/fa";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../redux/slice/authSlice";
 import { logOut } from "../firebase";
 
@@ -15,11 +15,15 @@ const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef();
     const user = useSelector(state => state.data.user)
+    const dispatch = useDispatch();
 
     const handleLogout = () => {
-        logOut()
-        .then(() => userLogout())
-        .catch(console.log("Could not log user out"))
+        const isUserLoggedOut = logOut();
+        if(isUserLoggedOut){
+            dispatch(userLogout());
+        } else {
+            console.log("Could not log user out")
+        }
     }
 
     return(
