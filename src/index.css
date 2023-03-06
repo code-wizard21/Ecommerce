@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Lato:regular,bold,italic&subset=latin,latin-ext'); */
+@import url('https://fonts.googleapis.com/css?family=Lato:regular,bold,italic&subset=latin,latin-ext');
 
 body {
   margin: 0;
@@ -9,6 +9,9 @@ body {
 }
 body p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  font-family: 'Lato', sans-serif;
 }
 
 code {

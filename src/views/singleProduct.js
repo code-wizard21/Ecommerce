@@ -26,10 +26,11 @@ const SingleProduct = () => {
         autoplaySpeed: 4000,
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         speed: 500,
         initialSlide: 2,
-        infinite: true
+        infinite: true,
+        arrows: false
     }
 
     return (
