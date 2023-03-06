@@ -6,7 +6,7 @@ import {
     where,
     addDoc
 } from "firebase/firestore"
-import { auth, db, detectUser } from './auth';
+import { auth, db } from './auth';
 
 export const registerWithEmailAndPassword = async (name, email, password) => {
     const q = query(collection(db, "users"), where("email", "==", email));
@@ -23,7 +23,6 @@ export const registerWithEmailAndPassword = async (name, email, password) => {
                 authProvider: "local",
                 email,
             });
-            detectUser()
         } catch (err) {
             console.error(err);
             alert(err.message);

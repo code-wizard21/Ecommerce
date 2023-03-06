@@ -48,14 +48,14 @@ const Topbar = () => {
                     </Link>
                     
                     <Link 
-                        href="/Login" 
+                        href={(user === null || user === undefined) ? "/Login" : "/Dashboard"} 
                         p="2" 
                         fontSize="18px" 
                         me={6} 
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="account"
                     >
-                        { (user === null) ? <FiUser /> : <Avatar size={"sm"} colorScheme="green" /> }
+                        { (user === null || user === undefined) ? <FiUser /> : <Avatar size={"sm"} colorScheme="green" /> }
                         
                     </Link>
                     

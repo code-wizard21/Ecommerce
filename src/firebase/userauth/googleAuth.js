@@ -6,7 +6,7 @@ import {
     where,
     addDoc
 } from "firebase/firestore"
-import { auth, db, detectUser } from './auth';
+import { auth, db } from './auth';
 
 
 const googleProvider = new GoogleAuthProvider();
@@ -23,7 +23,6 @@ export const signInWithGoogle = async () => {
         authProvider: "google",
         email: user.email,
       });
-      detectUser()
     }
   } catch (err) {
     console.error(err);

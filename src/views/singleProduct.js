@@ -5,6 +5,7 @@ import { data } from "../data/products"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
 import CartWishlist from "../components/shopActions/cartWishlist"
 
 const SingleProduct = () => {
@@ -37,7 +38,7 @@ const SingleProduct = () => {
             {
                 product &&
             <Flex justify="" flexWrap="wrap" mx={[ "20px", "20px", "10%"]} mb="5%">
-                <Box w={[ "100%", "100%", "40%"]}>
+                <Flex w={[ "100%", "100%", "40%"]}>
                     <Slider { ...settings } style={{ width: "100%", overflow: "hidden" }}>
                         {
                             [product.thumbnail, ...product.images].map((item, index) => { 
@@ -46,7 +47,7 @@ const SingleProduct = () => {
                             )})
                         }
                     </Slider>
-                </Box>
+                </Flex>
 
                 <Box w={[ "100%", "100%", "60%" ]} py="5%" px={[ "0", "0", "10%" ]}>
                     <Text fontSize="25px" fontWeight="600" pb="20px">{product.title}</Text>

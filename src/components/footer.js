@@ -38,7 +38,7 @@ const Footer = () => {
                     <NavLink navLocation={"Forum"} />
                 </Box>
 
-                <Box  w={[ "100%", "50%", "30%", "23%" ]} my="3">
+                <Box w={[ "100%", "50%", "30%", "23%" ]} my="3" px="3">
                     <SocialLinks />
                     <Text>1, White house Ave.</Text>
                     <Link href="mailto:support@motara.com">Support@motara.com</Link>

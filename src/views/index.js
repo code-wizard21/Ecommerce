@@ -11,11 +11,11 @@ import { FcShipped } from "react-icons/fc"
 import { BiBadgeCheck } from "react-icons/bi";
 import { IoMdHeadset } from "react-icons/io"
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import HeroSection from "../components/heroSection";
 import { homeInfoSettings } from "../utils/sliderSettings";
+import { Suspense } from "react";
 
+const renderLoader = () => <p>Loading</p>
 
 const Home = () => {
 
@@ -23,10 +23,13 @@ const Home = () => {
         <Box>
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
-                    <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                    <Suspense fallback={renderLoader()}>
+                        <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
+                    </Suspense>
                 </Box>
                 <HeroSection mainText={"Minimalistic and Modern Interior."} subText={"Upgrade your personality with our quality products. You can never go wrong with any of our products."} />
             </Flex>
+
 
             <Box p={[ "10px", "40px"]} px={["20px", "20px", "10%"]} bgColor="gray.100">
                 <Slider { ...homeInfoSettings } style={{ width: "100%", overflow: "hidden" }}>
@@ -95,7 +98,7 @@ const Home = () => {
                     <Box w={[ null, "100%", "40%" ]} p="5%" ps={[ "5%", "5%", 0 ]}>
                         <Text fontSize={[ "20px", "30px" ]} fontWeight="700" pb="15px" >Artistic Designs with unique shapes.</Text>
                         <Text fontSize="14px" fontWeight="600" mb="35px">Purpose of a furniture is to keep you comfortable while also beautifying your home</Text>
-                        <Link href="/shop" fontSize="14px"  p="10px 20px" bgColor="brand.900" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
+                        <Link href="/Shop" fontSize="14px"  p="10px 20px" bgColor="brand.900" color="white" _hover={{ bgColor: "orange.500" }}>Shop now</Link>
                     </Box>
                     <Image src={bg} w={[ null, "100%", "60%" ]} alt="bg" border="5px" borderStyle="solid" borderColor="gray.300" />
                 </Flex>

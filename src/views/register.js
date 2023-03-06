@@ -18,7 +18,7 @@ const Register = () => {
     return (
         <Flex m="20px" justify="center" fontSize="14px" backgroundImage={`url(${bg})`} bgSize="cover">
             <Flex justify="center" w="100%" bgColor="whiteAlpha.500">
-            <Box p="20px" w={[ "100%", "400px", "500px" ]} m="20px" bgColor="white">
+            <Box p="20px" w={[ "100%", "400px", "500px" ]} my="20px" bgColor="white">
                 <Heading textAlign="center">Register!</Heading>
                 <Text textAlign="center" fontWeight="600" py="3">Fill in your details to signup.</Text>
 

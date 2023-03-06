@@ -1,15 +1,14 @@
+import { useEffect, useState } from "react";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
 import Product from "../components/product";
 import ShopFilters from "../components/shopActions/shopFilter";
-import { useEffect, useState } from "react";
 import { shopSliderSettings } from "../utils/sliderSettings";
+import { filterProducts } from "../utils/filterProducts";
 
 const Shop = () => {
     const [products, setProducts] = useState([])
@@ -21,13 +20,8 @@ const Shop = () => {
     }, [setProducts, defaultProducts])
 
     const handleFilters = (filters) => {
-        const filteredProducts = defaultProducts.filter(product => 
-            (filters.categories.indexOf(product.category) !== -1) &&
-            (filters.brands.indexOf(product.details.brand) !== -1) && 
-            (filters.price[0] <= product.price && filters.price[1] >= product.price) && 
-            (parseFloat(filters.discount) <= product.discountPercentage)
-        )
-        setProducts(filteredProducts)
+        let filterResult = filterProducts(defaultProducts, filters)
+        setProducts(filterResult)
     }
 
 

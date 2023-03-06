@@ -10,6 +10,7 @@ import Cart from "../views/cart";
 import Checkout from "../views/checkout";
 import Wishlist from "../views/wishlist";
 import SingleProduct from "../views/singleProduct";
+import Dashboard from "../views/dashboard";
 
 
 const RoutesProvider = () => {
@@ -26,7 +27,9 @@ const RoutesProvider = () => {
                 <Route path="/Checkout" exact element={<Checkout />} />
                 <Route path="/Wishlist" exact element={<Wishlist />} />
                 <Route path="/SingleProduct" exact element={<SingleProduct />} />
+                <Route path="/Dashboard" exact element={<Dashboard />} />
             </Routes>
+
             <MobileBottombar />
             <Footer />
         </BrowserRouter>
