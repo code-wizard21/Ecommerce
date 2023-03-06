@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signIn } from "../firebase";
 import { userLogin } from "../redux/slice/authSlice";
-import { auth } from "../firebase/userauth/auth";
 
 const Login = () => {
     const [ type, setType ] = useState(true)

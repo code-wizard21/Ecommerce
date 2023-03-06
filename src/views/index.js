@@ -7,12 +7,7 @@ import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
 import Heading from "../components/heading";
 import { data } from "../data/products";
-import { FcShipped } from "react-icons/fc"
-import { BiBadgeCheck } from "react-icons/bi";
-import { IoMdHeadset } from "react-icons/io"
-import Slider from "react-slick";
 import HeroSection from "../components/heroSection";
-import { homeInfoSettings } from "../utils/sliderSettings";
 import Loader from "../components/loader/loader";
 
 const Product = React.lazy(() => import('../components/product'))
@@ -29,30 +24,6 @@ const Home = () => {
                 </Box>
                 <HeroSection mainText={"Minimalistic and Modern Interior."} subText={"Upgrade your personality with our quality products. You can never go wrong with any of our products."} />
             </Flex>
-
-
-            <Box p={[ "10px", "40px"]} px={["20px", "20px", "10%"]} bgColor="gray.100">
-                <Slider { ...homeInfoSettings } style={{ width: "100%", overflow: "hidden" }}>
-                    <Box>
-                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
-                            <FcShipped style={{ fontSize:"20px" }} />
-                            <Text px="2" color="black" fontWeight="600">FREE SHIPPING</Text>
-                        </Flex>
-                    </Box>
-                    <Box>
-                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
-                            <IoMdHeadset style={{ fontSize:"20px" }}  />
-                            <Text px="2" color="black" fontWeight="600">24 X 7 SERVICE</Text>
-                        </Flex>
-                    </Box>
-                    <Box>
-                        <Flex color="brand.900" align="center" justify="center" mx="4" my={[ "15px", null ]}>
-                            <BiBadgeCheck style={{ fontSize:"20px" }}  />
-                            <Text px="2" color="black" fontWeight="600">FESTIVAL OFFER</Text>
-                        </Flex>
-                    </Box>
-                </Slider>
-            </Box>
 
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
                 <Heading mainText={"GET AWESOME DISCOUNTS ON ALL PURCHASE"} subText={"Offers, Incentives and discounts all for you."} />
