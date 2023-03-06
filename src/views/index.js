@@ -13,7 +13,7 @@ import { IoMdHeadset } from "react-icons/io"
 import Slider from "react-slick";
 import HeroSection from "../components/heroSection";
 import { homeInfoSettings } from "../utils/sliderSettings";
-import { Suspense } from "react";
+import Loader from "../components/loader/loader";
 
 const Product = React.lazy(() => import('../components/product'))
 
@@ -23,7 +23,7 @@ const Home = () => {
         <Box>
             <Flex justify="flex-end" align="center" position="relative">
                 <Box w={[ "100%", "100%", "70%"]} >
-                    <Suspense fallback={renderLoader()}>
+                    <Suspense fallback={<Loader />}>
                         <Box w="100%" h="600px" backgroundImage={`url(${bgsofas2})`} backgroundSize="cover" bgPosition="50%, 75%" alt="bgImage"></Box>
                     </Suspense>
                 </Box>

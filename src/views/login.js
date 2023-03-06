@@ -21,7 +21,7 @@ const Login = () => {
             dispatch(userLogin(result.email));
             navigate("/Home")
         })
-        .catch(error => console.log(error))
+        .catch(error => setErrorMsg(error))
     }
 
 
