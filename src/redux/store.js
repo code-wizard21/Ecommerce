@@ -20,17 +20,13 @@ import cartReducer from "./slice/cartSlice";
 import wishlistReducer from "./slice/wishlistSlice";
 import userReducer from "./slice/authSlice";
 
-const rrfConfig = {
-    userProfile: "users",
-    useFirestoreForProfile: true
-}
-
 const persistConfig = {
     key: 'root',
     storage,
 }
 
 const combinedReducers = combineReducers({
+    user: userReducer,
     products: productsReducer,
     cart: cartReducer,
     wishlist: wishlistReducer,

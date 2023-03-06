@@ -1,18 +1,27 @@
 import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button } from "@chakra-ui/react"
 import { useState } from "react";
-import { FaEnvelope, FaEye, FaLock, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import bg from "../assets/imgs/bg.jpg"
-import { registerWithEmailAndPassword } from "../firebase/userauth/registerUser";
+import { signUp } from "../firebase";
+import { userSignup } from "../redux/slice/authSlice";
 
 const Register = () => {
     const [ type, setType ] = useState(true)
     const [ cpasswordtype, setCpasswordtype ] = useState(true)
-    const [ fullname, setFullName ] = useState("")
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
 
     const handleRegister = () => {
-        registerWithEmailAndPassword(fullname, email, password)
+        signUp(email, password)
+        .then(result => {
+            dispatch(userSignup(result.email));
+            navigate("/dashboard")
+        })
+        .catch(error => console.log(error))
     }
 
     return (
@@ -21,17 +30,6 @@ const Register = () => {
             <Box p="20px" w={[ "100%", "400px", "500px" ]} my="20px" bgColor="white">
                 <Heading textAlign="center">Register!</Heading>
                 <Text textAlign="center" fontWeight="600" py="3">Fill in your details to signup.</Text>
-
-                <FormControl mt="4">
-                    <FormLabel fontSize="14px">Full name </FormLabel>
-                    
-                    <Flex align="center" w="100%" p="2px" border="1px" borderColor="gray.100" borderRadius="0">
-                        <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
-                            <FaUser />
-                        </Button>
-                        <Input type="text" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setFullName(e.target.value)} />
-                    </Flex>
-                </FormControl>
 
                 <FormControl mt="4">
                     <FormLabel fontSize="14px">Email address </FormLabel>

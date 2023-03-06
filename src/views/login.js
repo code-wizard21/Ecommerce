@@ -1,9 +1,9 @@
 import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Switch, Alert, AlertIcon, AlertDescription } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { signIn } from "../firebase";
 import { userLogin } from "../redux/slice/authSlice";
 import { auth } from "../firebase/userauth/auth";
 
@@ -15,19 +15,13 @@ const Login = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const handleLogin = () => {
-        signInWithEmailAndPassword(auth, email, password) 
-        .then((userAuth) => {
-            dispatch(userLogin({
-                email: userAuth.email,
-                uid: userAuth.uid,
-                displayName: userAuth.displayName
-            }))
-            console.log(userAuth)
+    const handleLogin = async () => {
+        signIn(email, password)
+        .then(result => {
+            dispatch(userLogin(result.email));
+            navigate("/Home")
         })
-        .catch((err) => {
-            setErrorMsg(err);
-        })
+        .catch(error => console.log(error))
     }
 
 

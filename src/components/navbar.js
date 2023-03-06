@@ -6,11 +6,25 @@ import SearchBar from "./searchbar";
 import SocialLinks from "./sociallinks";
 import NavLink from "./navLink";
 import { BiStore } from "react-icons/bi";
-import { FaCog } from "react-icons/fa";
+import { FaCog, FaSignOutAlt } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../redux/slice/authSlice";
+import { logOut } from "../firebase";
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef();
+    const user = useSelector(state => state.data.user)
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        const isUserLoggedOut = logOut();
+        if(isUserLoggedOut){
+            dispatch(userLogout());
+        } else {
+            console.log("Could not log user out")
+        }
+    }
 
     return(
         <>
@@ -25,7 +39,7 @@ const Navbar = () => {
                     <DrawerHeader  my="2" display="flex" alignItems="center">
                         <Avatar size="sm" me="2" /> 
                         <Box>
-                            <Link href="/dashboard" fontSize="14px">Daniel Marshal</Link>
+                            <Link href={user.email ? "/dashboard" : "/login"} fontSize="14px">{user.email ? user.email : "Login"}</Link>
                             <Text fontSize="12px">Personal balance: $0</Text>
                         </Box>
                     </DrawerHeader>
@@ -64,6 +78,15 @@ const Navbar = () => {
                                     <FaCog />
                                 </NavLink>
                             </Box>
+                            {
+                                (!user.email) ? "" :
+                                <Box fontWeight="600" my="2">
+                                    <Box display="flex" navLocation={"Logout"} cursor={"pointer"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
+                                        <FaSignOutAlt />
+                                        <Text me="3" ml={"10px"} >Logout</Text>
+                                    </Box>
+                                </Box>
+                            }
                         </Box>
                         
 

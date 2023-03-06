@@ -1,10 +1,11 @@
-import { Avatar, Badge, Box, Flex, Image, Link } from "@chakra-ui/react";
+import { Badge, Box, Flex, Image, Link } from "@chakra-ui/react";
 import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
 import SearchBar from "./searchbar";
 import { useSelector } from "react-redux";
 import logo from "../assets/imgs/logo.png"
+import { useEffect } from "react";
 
 const Topbar = () => {
     const location = useLocation().pathname;
@@ -13,6 +14,10 @@ const Topbar = () => {
     const active = {
         color: "brand.900"
     }
+
+    useEffect(() => {
+        console.log(user)
+    })
 
 
     return (
@@ -48,14 +53,14 @@ const Topbar = () => {
                     </Link>
                     
                     <Link 
-                        href={(user === null || user === undefined) ? "/Login" : "/Dashboard"} 
+                        href={user.email ? "/dashboard" : "/Login"} 
                         p="2" 
-                        fontSize="18px" 
+                        fontSize="14px" 
                         me={6} 
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         _hover={{ color: "brand.900" }} title="account"
                     >
-                        { (user === null || user === undefined) ? <FiUser /> : <Avatar size={"sm"} colorScheme="green" /> }
+                        { (user.email) ? <FiUser /> : "Login" }
                         
                     </Link>
                     
