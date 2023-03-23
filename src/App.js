@@ -16,7 +16,6 @@ const colors = {
 const theme = extendTheme({ colors })
 
 const App = () => {
-  const user = useSelector((state) => state.data.user)
   const dispatch = useDispatch()
 
 
@@ -33,7 +32,7 @@ const App = () => {
             dispatch(userLogout())
         }
     })
-  }, [])
+  }, [dispatch])
 
   return (
       <ChakraProvider theme={theme}>
