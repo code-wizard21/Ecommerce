@@ -43,9 +43,9 @@ npm start
 
 
 ### credits
-- [Chakra-ui](chakra-ui.com)
-- [Redux](react-redux.js.org)
-- [React carousel](react-slick.neostack.com/docs/get-started)
+- [Chakra-ui](https://chakra-ui.com)
+- [Redux](https://react-redux.js.org)
+- [React carousel](https://react-slick.neostack.com/docs/get-started)
 
 ### You may also like
 Check out my awesome [Timerz](https://github.com/abel-otegbola/Timerz) app built with react
