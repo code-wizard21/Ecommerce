@@ -1,5 +1,5 @@
 import { Badge, Box, Flex, Image, Link } from "@chakra-ui/react";
-import { FiShoppingCart, FiUser } from "react-icons/fi";
+import { FiShoppingCart } from "react-icons/fi";
 import { useLocation } from "react-router-dom";
 import Navbar from "./navbar";
 import SearchBar from "./searchbar";
@@ -55,12 +55,16 @@ const Topbar = () => {
                     <Link 
                         href={user.email ? "/dashboard" : "/Login"} 
                         p="2" 
+                        px="6"
+                        borderRadius="5"
                         fontSize="14px" 
-                        me={6} 
+                        bg="brand.900"
+                        color="white"
+                        mx={4} 
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
-                        _hover={{ color: "brand.900" }} title="account"
+                        title="account"
                     >
-                        { (user.email) ? <FiUser /> : "Login" }
+                        { (user.email) ? "Dashboard" : "Login" }
                         
                     </Link>
                     

@@ -10,6 +10,8 @@ export const shopSliderSettings = {
     slidesToShow: 2,
     slidesToScroll: 1,
     initialSlide: 2,
+    dots: false,
+    arrows: false,
     responsive: [
         {
             breakpoint: 700,

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Box, Flex, Grid, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
@@ -27,8 +29,8 @@ const Shop = () => {
 
     return (
         <Box>
-            <Box justify="center" w="100%">
-                <Slider { ...shopSliderSettings } style={{ width: "100%", overflow: "hidden" }}>
+            <Flex justify="center" w="100%">
+                <Slider { ...shopSliderSettings } style={{ width: "100%", overflow: "hidden", display: "flex" }}>
                     <Box w="100%" h="250px" backgroundImage={`url(${bg1})`} backgroundSize="cover" bgPosition="50%, 75%">
                         <Box float="right" p="5% 30px" lineHeight="40px" fontSize="0.8rem" w={["50%"]}>
                             <Text mt="30px" fontSize="20px" fontWeight="700" color="brand.900">Get as low as 60% discount on our chairs</Text>
@@ -45,9 +47,9 @@ const Shop = () => {
                         </Box>
                     </Box>
                 </Slider>
-            </Box>
+            </Flex>
 
-            <Flex my="5%" mx={[ "20px", "20px", "5%" ]} flexWrap="wrap">
+            <Flex my="5%" mx={[ "20px", "20px", "10%" ]} flexWrap="wrap">
 
                 <ShopFilters handleFilters={handleFilters} clearFilters={() => setProducts(defaultProducts)}/>
 
