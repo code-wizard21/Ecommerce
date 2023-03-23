@@ -1,6 +1,6 @@
 import { extendTheme, ChakraProvider } from "@chakra-ui/react";
 import RoutesProvider from "./routes";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { userLogin, userLogout } from "./redux/slice/authSlice";
 import { auth } from "./firebase/userauth/auth";
