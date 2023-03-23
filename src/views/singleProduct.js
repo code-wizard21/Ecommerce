@@ -5,7 +5,6 @@ import { data } from "../data/products"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
 import CartWishlist from "../components/shopActions/cartWishlist"
 
 const SingleProduct = () => {
