@@ -10,11 +10,11 @@ const BottomNavLink = ({ link, activeLocations, children }) => {
     return (
         <Link 
             href={`/${link}`}
-            p="15px 18px" 
+            p="15px" 
             fontSize="20px" 
-            borderRadius="5px" 
             display="flex"
             alignItems="center"
+            justifyContent="space-between"
             flexDirection="column"
             textAlign="center"
             _hover={{color: active}} 
@@ -23,7 +23,7 @@ const BottomNavLink = ({ link, activeLocations, children }) => {
             position="relative"
         >
             { children }
-            <Text overflow="hidden" fontSize="10px" paddingTop="7px" h={( activeLocations.indexOf(location) !== -1 ) ? "25px"  : "0"}>{link !== "" ? link : "Home"}</Text>
+            <Text overflow="hidden" fontSize="10px" marginTop="7px" h={( activeLocations.indexOf(location) !== -1 ) ? "25px"  : "0"}>{link !== "" ? link : "Home"}</Text>
         </Link>
     )
 }

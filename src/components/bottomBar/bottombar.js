@@ -18,7 +18,7 @@ const MobileBottombar = () => {
     return (
         <Flex 
             justify="space-between" align="center" 
-            p="5px 12px" 
+            p="3px 12px" 
             bgColor="white" 
             borderColor="gray.100" 
             w="100%" 
@@ -41,9 +41,8 @@ const MobileBottombar = () => {
             </Modal>
             <Text 
                 onClick={onOpen} 
-                p="15px 18px" 
+                p="15px" 
                 fontSize="20px" 
-                borderRadius="5px" 
                 _hover={{color: active}} 
                 color={ (location === "#")? active : ""} title="search"
             >

@@ -28,19 +28,19 @@ const Home = () => {
             <Box fontSize="14px" px={[ null, "10px", "5%", "10%" ]} m="10% 0 50px 0">
                 <Heading mainText={"GET AWESOME DISCOUNTS ON ALL PURCHASE"} subText={"Offers, Incentives and discounts all for you."} />
                 <Flex justify="space-between" flexWrap="wrap" px={[ "20px", "20px", null ]}>
-                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
+                    <Link href="/Shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg1})`}  bgSize="cover"my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">SOFA</Text>
                             <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 30%</Badge></Text>
                         </Box>
                     </Link>
-                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg2})`} bgSize="cover" my={[ "15px", null ]}>
+                    <Link href="/Shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg2})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">NEW ARRIVAL</Text>
                             <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 50%</Badge></Text>
                         </Box>
                     </Link>
-                    <Link href="/shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg3})`} bgSize="cover" my={[ "15px", null ]}>
+                    <Link href="/Shop" w={[ "100%", "48%", "32%" ]} textAlign="right" backgroundImage={`url(${bg3})`} bgSize="cover" my={[ "15px", null ]}>
                         <Box p="50px">
                             <Text fontWeight="600">CHAIR</Text>
                             <Text fontWeight="600" color="brand.900" mb="20px"><Badge colorScheme="green">SAVE 20%</Badge></Text>
