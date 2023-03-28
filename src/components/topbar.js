@@ -39,7 +39,7 @@ const Topbar = () => {
                     <SearchBar />
                 </Box>
 
-                <Flex align="center" justify="flex-end" w="22%">
+                <Flex align="center" justify="flex-end">
                     <Link 
                         href="/Cart"
                         p="2" 

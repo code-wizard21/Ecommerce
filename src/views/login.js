@@ -17,8 +17,13 @@ const Login = () => {
     const handleLogin = async () => {
         signIn(email, password)
         .then(result => {
-            dispatch(userLogin(result.email));
-            navigate("/Home")
+            if(result.email) {
+                dispatch(userLogin(result.email));
+                navigate("/")
+            }
+            else {
+                setErrorMsg("Login error")
+            }
         })
         .catch(error => setErrorMsg(error))
     }
