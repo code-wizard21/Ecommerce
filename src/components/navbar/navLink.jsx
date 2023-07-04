@@ -8,7 +8,7 @@ const NavLink = ({ navLocation, children }) => {
     return (
         <Box display="flex">
             <Link href={`/${navLocation}`} py="2" display="flex" alignItems="center" w="100%" color={(location === `/${navLocation}`) ? "brand.900" : ""}  _hover={{ color: "brand.900" }}>
-                <Text me="3" color="gray.400" >{children}</Text>
+                <Text me="3" opacity="0.6" >{children}</Text>
                 {navLocation}
             </Link>
         </Box>

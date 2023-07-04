@@ -3,8 +3,8 @@ import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signIn } from "../firebase";
-import { userLogin } from "../redux/slice/authSlice";
+import { signIn } from "../../firebase";
+import { userLogin } from "../../redux/slice/authSlice";
 
 const Login = () => {
     const [ type, setType ] = useState(true)

@@ -2,14 +2,14 @@ import { Avatar, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, D
 import { useRef } from "react"
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiHeart, FiHome, FiShoppingCart } from "react-icons/fi";
-import SearchBar from "./searchbar";
-import SocialLinks from "./sociallinks";
+import SearchBar from "../searchbar/searchbar";
+import SocialLinks from "../sociallinks/sociallinks";
 import NavLink from "./navLink";
 import { BiStore } from "react-icons/bi";
 import { FaCog, FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogout } from "../redux/slice/authSlice";
-import { logOut } from "../firebase";
+import { userLogout } from "../../redux/slice/authSlice";
+import { logOut } from "../../firebase";
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();

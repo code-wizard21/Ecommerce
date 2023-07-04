@@ -1,7 +1,7 @@
 import { Box, Grid } from "@chakra-ui/react";
-import Heading from "../components/heading";
+import Heading from "../../components/heading/heading";
 import { useSelector } from "react-redux"
-import Product from "../components/product";
+import Product from "../../components/product/product";
 
 
 const Wishlist = () => {

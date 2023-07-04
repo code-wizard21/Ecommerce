@@ -1,8 +1,8 @@
 import { Suspense } from "react"
 import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react";
-import StarRating from "./starRating"
+import StarRating from "../starRating/starRating"
 import { Link } from "react-router-dom"
-import CartWishlist from "./shopActions/cartWishlist";
+import CartWishlist from "../shopActions/cartWishlist";
 
 const renderLoader = () => <p>Loading</p>;
 

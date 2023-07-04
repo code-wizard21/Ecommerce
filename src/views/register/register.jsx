@@ -4,8 +4,8 @@ import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import bg from "../assets/imgs/bg.jpg"
-import { signUp } from "../firebase";
-import { userSignup } from "../redux/slice/authSlice";
+import { signUp } from "../../firebase";
+import { userSignup } from "../../redux/slice/authSlice";
 
 const Register = () => {
     const [ type, setType ] = useState(true)

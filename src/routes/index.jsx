@@ -1,20 +1,20 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import React, { Suspense, lazy } from 'react';
-import Footer from "../components/footer";
+import Footer from "../components/footer/footer";
 import MobileBottombar from "../components/bottomBar/bottombar";
-import Topbar from "../components/topbar";
+import Topbar from "../components/topbar/topbar";
 import { useSelector } from "react-redux";
 import Loader from "../components/loader/loader";
 
-const Home = lazy(() => import("../views/index"));
-const Login = lazy(() => import("../views/login"));
-const Register = lazy(() => import("../views/register"));
-const Shop = lazy(() => import("../views/shop"));
-const Cart = lazy(() => import("../views/cart"));
-const Checkout = lazy(() => import("../views/checkout"));
-const Wishlist = lazy(() => import("../views/wishlist"));
-const Dashboard = lazy(() => import("../views/dashboard"));
-const SingleProduct = lazy(() => import("../views/singleProduct"));
+const Home = lazy(() => import("../views/home/index"));
+const Login = lazy(() => import("../views/login/login"));
+const Register = lazy(() => import("../views/register/register"));
+const Shop = lazy(() => import("../views/shop/shop"));
+const Cart = lazy(() => import("../views/cart/cart"));
+const Checkout = lazy(() => import("../views/checkout/checkout"));
+const Wishlist = lazy(() => import("../views/wishlist/wishlist"));
+const Dashboard = lazy(() => import("../views/dashboard/dashboard"));
+const SingleProduct = lazy(() => import("../views/singleProduct/singleProduct"));
 
 
 const RoutesProvider = () => {

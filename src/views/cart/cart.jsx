@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Badge, Box, Button, Divider, Flex, Image, Input, Link, Text } from "@chakra-ui/react"
-import Heading from "../components/heading";
+import Heading from "../../components/heading/heading";
 import { FaHandPointDown } from "react-icons/fa";
 import { FiTrash } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
-import { removeProductFromCart } from "../redux/slice/cartSlice";
+import { removeProductFromCart } from "../../redux/slice/cartSlice";
 import { Link as RouterLink, } from "react-router-dom"
-import ChangeQuantity from "../components/shopActions/changeQuantity";
+import ChangeQuantity from "../../components/shopActions/changeQuantity";
 
 const Cart = () => {
     const dispatch = useDispatch();

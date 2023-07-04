@@ -1,12 +1,12 @@
 import { Badge, Box, Flex, Image, Text } from "@chakra-ui/react"
-import Heading from "../components/heading"
-import StarRating from "../components/starRating"
-import { data } from "../data/products"
+import Heading from "../../components/heading/heading"
+import StarRating from "../../components/starRating/starRating"
+import { data } from "../../data/products"
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
-import CartWishlist from "../components/shopActions/cartWishlist"
+import CartWishlist from "../../components/shopActions/cartWishlist"
 
 const SingleProduct = () => {
     const location = useLocation().search;

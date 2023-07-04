@@ -5,12 +5,12 @@ import bg from "../assets/imgs/bg.jpg"
 import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
-import Heading from "../components/heading";
-import { data } from "../data/products";
-import HeroSection from "../components/heroSection";
-import Loader from "../components/loader/loader";
+import Heading from "../../components/heading/heading";
+import { data } from "../../data/products";
+import HeroSection from "../../components/heroSection/heroSection";
+import Loader from "../../components/loader/loader";
 
-const Product = React.lazy(() => import('../components/product'))
+const Product = React.lazy(() => import('../../components/product/product'))
 
 const Home = () => {
 

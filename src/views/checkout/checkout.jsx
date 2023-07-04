@@ -1,5 +1,5 @@
 import { Box, Flex, Input, Link, Select, Text, FormControl, FormLabel } from "@chakra-ui/react"
-import Heading from "../components/heading";
+import Heading from "../../components/heading/heading";
 import { Country, State, City } from "country-state-city";
 import { useState } from "react";
 

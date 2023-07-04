@@ -2,7 +2,7 @@ import { Badge, Flex, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHea
 import { BiStore } from "react-icons/bi";
 import { FiHeart, FiHome, FiSearch, FiShoppingCart } from "react-icons/fi"
 import { useLocation } from "react-router-dom";
-import SearchBar from "../searchbar";
+import SearchBar from "../searchbar/searchbar";
 import { useSelector } from "react-redux"
 import BottomNavLink from "./bottomNavLink";
 

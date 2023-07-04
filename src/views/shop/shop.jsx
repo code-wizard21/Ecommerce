@@ -7,10 +7,10 @@ import bg1 from "../assets/imgs/bg1.webp"
 import bg2 from "../assets/imgs/bg2.webp"
 import bg3 from "../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
-import Product from "../components/product";
-import ShopFilters from "../components/shopActions/shopFilter";
-import { shopSliderSettings } from "../utils/sliderSettings";
-import { filterProducts } from "../utils/filterProducts";
+import Product from "../../components/product/product";
+import ShopFilters from "../../components/shopActions/shopFilter";
+import { shopSliderSettings } from "../../utils/sliderSettings";
+import { filterProducts } from "../../utils/filterProducts";
 
 const Shop = () => {
     const [products, setProducts] = useState([])

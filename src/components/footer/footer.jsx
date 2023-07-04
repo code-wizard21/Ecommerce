@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
-import NavLink from "./navLink";
-import SocialLinks from "./sociallinks";
+import NavLink from "../navbar/navLink";
+import SocialLinks from "../sociallinks/sociallinks";
 
 const Footer = () => {
     return (
