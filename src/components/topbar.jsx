@@ -53,7 +53,7 @@ const Topbar = () => {
                     </Link>
                     
                     <Link 
-                        href={user.email ? "/dashboard" : "/Login"} 
+                        href={user? "/dashboard" : "/Login"} 
                         p="2" 
                         px="6"
                         borderRadius="5"
@@ -64,7 +64,7 @@ const Topbar = () => {
                         style={ (location === "/Login" || location === "/Register") ? active : {color:""} } 
                         title="account"
                     >
-                        { (user.email) ? "Dashboard" : "Login" }
+                        { (user) ? "Dashboard" : "Login" }
                         
                     </Link>
                     

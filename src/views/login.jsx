@@ -18,7 +18,7 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             if(result.email) {
-                dispatch(userLogin(result.email));
+                dispatch(userLogin(result));
                 navigate("/")
             }
             else {

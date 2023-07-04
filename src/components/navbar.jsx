@@ -17,13 +17,19 @@ const Navbar = () => {
     const user = useSelector(state => state.data.user)
     const dispatch = useDispatch();
 
-    const handleLogout = () => {
-        const isUserLoggedOut = logOut();
-        if(isUserLoggedOut){
-            dispatch(userLogout());
-        } else {
-            console.log("Could not log user out")
-        }
+    const handleLogout = async () => {
+        console.log("clicked")
+        dispatch(userLogout(null));
+        await logOut()
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => console.error)
+        // if(isUserLoggedOut){
+        // } else {
+        //     console.log("Could not log user out")
+        // }
     }
 
     return(
@@ -39,7 +45,7 @@ const Navbar = () => {
                     <DrawerHeader  my="2" display="flex" alignItems="center">
                         <Avatar size="sm" me="2" /> 
                         <Box>
-                            <Link href={user.email ? "/dashboard" : "/login"} fontSize="14px">{user.email ? user.email : "Login"}</Link>
+                            <Link href={user ? "/dashboard" : "/login"} fontSize="14px">{user ? "Welcome" : "Login"}</Link>
                             <Text fontSize="12px">Personal balance: $0</Text>
                         </Box>
                     </DrawerHeader>
@@ -79,7 +85,7 @@ const Navbar = () => {
                                 </NavLink>
                             </Box>
                             {
-                                (!user.email) ? "" :
+                                (!user) ? "" :
                                 <Box fontWeight="600" my="2">
                                     <Box display="flex" navLocation={"Logout"} cursor={"pointer"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
                                         <FaSignOutAlt />

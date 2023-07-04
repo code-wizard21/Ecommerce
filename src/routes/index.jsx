@@ -36,7 +36,7 @@ const RoutesProvider = () => {
                     <Route path="/SingleProduct" exact element={<SingleProduct />} />
 
                     <Route path="/Logout" exact element={<Navigate to="/Login" replace />} />
-                    <Route path={"/Dashboard"} exact element={user.email ? <Dashboard /> : <Navigate to="/Login" replace />} />
+                    <Route path={"/Dashboard"} exact element={user ? <Dashboard /> : <Navigate to="/Login" replace />} />
                 </Routes>
             </Suspense>
             <MobileBottombar />
