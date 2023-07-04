@@ -1,6 +1,6 @@
 import { Avatar, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Text, useDisclosure, Box, Link } from "@chakra-ui/react"
 import { useRef } from "react"
-import { HiMenuAlt3 } from "react-icons/hi";
+import { HiMenu, HiMenuAlt3 } from "react-icons/hi";
 import { FiHeart, FiHome, FiShoppingCart } from "react-icons/fi";
 import SearchBar from "../searchbar/searchbar";
 import SocialLinks from "../sociallinks/sociallinks";
@@ -34,8 +34,8 @@ const Navbar = () => {
 
     return(
         <>
-            <Button href="/"  me={[ "7px", "5px", 0 ]} fontSize="20px" bgColor="white" border="none" onClick={onOpen} minW="auto">
-                <HiMenuAlt3 />
+            <Button href="/"  me={[ "7px", "5px", 0 ]} fontSize="20px" ms="2" bgColor="white" border="none" onClick={onOpen} minW="auto">
+                <HiMenu />
             </Button>
 
             <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>

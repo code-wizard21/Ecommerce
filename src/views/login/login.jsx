@@ -10,7 +10,7 @@ const Login = () => {
     const [ type, setType ] = useState(true)
     const [ email, setEmail ] = useState("")
     const [ password, setPassword ] = useState("")
-    const [ errorMsg, setErrorMsg ] = useState("")
+    const [ error, setError ] = useState("")
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -22,10 +22,10 @@ const Login = () => {
                 navigate("/")
             }
             else {
-                setErrorMsg("Login error")
+                setError("Login error")
             }
         })
-        .catch(error => setErrorMsg(error))
+        .catch(error => setError(error))
     }
 
 
@@ -36,10 +36,15 @@ const Login = () => {
                     <Heading textAlign="center">Welcome back!</Heading>
                     <Text textAlign="center" fontWeight="600" py="3">Enter your email and password.</Text>
 
-                    <Alert status="error">
-                        <AlertIcon/>
-                        <AlertDescription>{errorMsg}</AlertDescription>
-                    </Alert>
+                    {
+                        error !== "" ?
+                        <Alert status="error">
+                            <AlertIcon/>
+                            <AlertDescription>{error}</AlertDescription>
+                        </Alert>
+                        :
+                        ""
+                    }
                     <FormControl mt="4">
                         <FormLabel fontSize="14px">Email address </FormLabel>
                         
@@ -73,7 +78,7 @@ const Login = () => {
                         <Link w="150px" fontSize="12px" color="red">Forgot password?</Link>
                     </Flex>
 
-                    <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }} onClick={() => handleLogin()}>Login</Button>
+                    <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "brand.800" }} onClick={() => handleLogin()}>Login</Button>
 
                     <Text mt="4">Don't have an account yet? <Link href="/Register" color="brand.900">Sign up</Link></Text>
                 </Box>

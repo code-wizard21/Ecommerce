@@ -18,7 +18,7 @@ const MobileBottombar = () => {
     return (
         <Flex 
             justify="space-between" align="center" 
-            p="3px 12px" 
+            p="5px 12px" 
             bgColor="white" 
             borderColor="gray.100" 
             w="100%" 

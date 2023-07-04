@@ -1,9 +1,9 @@
-import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button } from "@chakra-ui/react"
+import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Alert, AlertIcon, AlertDescription } from "@chakra-ui/react"
 import { useState } from "react";
 import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import bg from "../assets/imgs/bg.jpg"
+import bg from "../../assets/imgs/bg.jpg"
 import { signUp } from "../../firebase";
 import { userSignup } from "../../redux/slice/authSlice";
 
@@ -11,6 +11,7 @@ const Register = () => {
     const [ type, setType ] = useState(true)
     const [ cpasswordtype, setCpasswordtype ] = useState(true)
     const [ email, setEmail ] = useState("")
+    const [ error, setError ] = useState("")
     const [ password, setPassword ] = useState("")
     const dispatch = useDispatch();
     const navigate = useNavigate()
@@ -21,15 +22,25 @@ const Register = () => {
             dispatch(userSignup(result.email));
             navigate("/dashboard")
         })
-        .catch(error => console.log(error))
+        .catch(error => setError(error))
     }
 
     return (
-        <Flex m="20px" justify="center" fontSize="14px" backgroundImage={`url(${bg})`} bgSize="cover">
-            <Flex justify="center" w="100%" bgColor="whiteAlpha.500">
-            <Box p="20px" w={[ "100%", "400px", "500px" ]} my="20px" bgColor="white">
+        <Flex m="20px" justify="center" fontSize="14px">
+            <Flex justify="center" w="100%">
+            <Box p="20px" w={[ "100%", "400px", "500px" ]} my="20px" bgColor="white" shadow="md">
                 <Heading textAlign="center">Register!</Heading>
                 <Text textAlign="center" fontWeight="600" py="3">Fill in your details to signup.</Text>
+
+                {
+                    error !== "" ?
+                    <Alert status="error">
+                        <AlertIcon/>
+                        <AlertDescription>{error}</AlertDescription>
+                    </Alert>
+                    :
+                    ""
+                }
 
                 <FormControl mt="4">
                     <FormLabel fontSize="14px">Email address </FormLabel>
@@ -70,7 +81,7 @@ const Register = () => {
                     </Flex>
                 </FormControl>
 
-                <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "orange.400" }} onClick={() => handleRegister()}>Sign up</Button>
+                <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "brand.800" }} onClick={() => handleRegister()}>Sign up</Button>
 
                 <Text mt="4">Already have an account? <Link href="/Login" color="brand.900">Login</Link></Text>
             </Box>

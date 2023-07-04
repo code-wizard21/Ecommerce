@@ -3,9 +3,9 @@ import { Box, Flex, Grid, Text } from "@chakra-ui/react"
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import bg1 from "../assets/imgs/bg1.webp"
-import bg2 from "../assets/imgs/bg2.webp"
-import bg3 from "../assets/imgs/bg3.webp"
+import bg1 from "../../assets/imgs/bg1.webp"
+import bg2 from "../../assets/imgs/bg2.webp"
+import bg3 from "../../assets/imgs/bg3.webp"
 import { useSelector } from "react-redux";
 import Product from "../../components/product/product";
 import ShopFilters from "../../components/shopActions/shopFilter";
@@ -15,7 +15,6 @@ import { filterProducts } from "../../utils/filterProducts";
 const Shop = () => {
     const [products, setProducts] = useState([])
     const defaultProducts = useSelector((state) => state.data.products)
-
 
     useEffect(() => {
         setProducts(defaultProducts)

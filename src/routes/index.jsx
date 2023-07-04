@@ -15,6 +15,7 @@ const Checkout = lazy(() => import("../views/checkout/checkout"));
 const Wishlist = lazy(() => import("../views/wishlist/wishlist"));
 const Dashboard = lazy(() => import("../views/dashboard/dashboard"));
 const SingleProduct = lazy(() => import("../views/singleProduct/singleProduct"));
+const Search = lazy(() => import("../views/search/search"));
 
 
 const RoutesProvider = () => {
@@ -34,6 +35,7 @@ const RoutesProvider = () => {
                     <Route path="/Checkout" exact element={<Checkout />} />
                     <Route path="/Wishlist" exact element={<Wishlist />} />
                     <Route path="/SingleProduct" exact element={<SingleProduct />} />
+                    <Route path="/Search" exact element={<Search />} />
 
                     <Route path="/Logout" exact element={<Navigate to="/Login" replace />} />
                     <Route path={"/Dashboard"} exact element={user ? <Dashboard /> : <Navigate to="/Login" replace />} />
