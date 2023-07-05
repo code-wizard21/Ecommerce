@@ -14,11 +14,11 @@ const SearchBar = () => {
                 borderRadius="30px"
                 position="relative"
             >
+                <Input placeholder="Search here" className="query" name="query" fontSize="14px" border="none" type="search" borderRadius="30px"/>
+
                 <Button type="submit" href="/" bgColor="gray.100" p="3" border="1px" borderRadius="30px" borderColor="gray.100">
                     <FaSearch />
                 </Button>
-                <Input placeholder="Search here" name="query" fontSize="14px" border="none" type="search" borderRadius="30px"/>
-
             </Flex>
         </form>
 
