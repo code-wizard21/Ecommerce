@@ -53,7 +53,7 @@ const Navbar = () => {
 
                         <SearchBar />
 
-                        <Box fontSize="15px" my="4" mx="1">
+                        <Box fontSize="15px" my="8" mx="1">
                             <Box fontWeight='600' my="2">
                                 <NavLink navLocation={"Home"}>
                                     <FiHome />
@@ -73,17 +73,7 @@ const Navbar = () => {
                                 <NavLink navLocation={"Wishlist"}>
                                     <FiShoppingCart />
                                 </NavLink>
-                            </Box>    
-                            <Box fontWeight="600" my="2">      
-                                <NavLink navLocation={"Account"}>
-                                    <FiHeart />
-                                </NavLink>
-                            </Box>    
-                            <Box fontWeight="600" my="2">      
-                                <NavLink navLocation={"Settings"}>
-                                    <FaCog />
-                                </NavLink>
-                            </Box>
+                            </Box>     
                             {
                                 (!user) ? "" :
                                 <Box fontWeight="600" my="2">
