@@ -9,6 +9,7 @@ import Loader from "../components/loader/loader";
 const Home = lazy(() => import("../views/home/index"));
 const Login = lazy(() => import("../views/login/login"));
 const Register = lazy(() => import("../views/register/register"));
+const ForgotPassword = lazy(() => import("../views/forgotPassword/forgotPassword"));
 const Shop = lazy(() => import("../views/shop/shop"));
 const Cart = lazy(() => import("../views/cart/cart"));
 const Checkout = lazy(() => import("../views/checkout/checkout"));
@@ -31,6 +32,7 @@ const RoutesProvider = () => {
                     <Route path="/Home" exact element={<Navigate to="/" replace />} />
                     <Route path="/Login" exact element={<Login />} />
                     <Route path="/Register" exact element={<Register />} />
+                    <Route path="/Forgotpassword" exact element={<ForgotPassword />} />
                     <Route path="/Shop" exact element={<Shop />} />
                     <Route path="/Cart" exact element={<Cart />} />
                     <Route path="/Checkout" exact element={<Checkout />} />
