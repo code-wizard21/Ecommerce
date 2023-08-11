@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Alert, AlertIcon, AlertDescription } from "@chakra-ui/react"
 import { useState } from "react";
-import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaEye, FaLock, FaTimes } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import bg from "../../assets/imgs/bg.jpg"
@@ -39,9 +39,9 @@ const Register = () => {
 
                 {
                     error !== "" ?
-                    <Alert status="error">
-                        <AlertIcon/>
-                        <AlertDescription>{error}</AlertDescription>
+                    <Alert status="error" display={"flex"} justifyContent={"space-between"} mx="auto" my="30px">
+                        <AlertDescription>{error.replace("Firebase:", "")}</AlertDescription>
+                        <FaTimes onClick={() => setError("")} />
                     </Alert>
                     :
                     ""

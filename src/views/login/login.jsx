@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Heading, FormControl, FormLabel, Input, Link, Button, Switch, Alert, AlertIcon, AlertDescription } from "@chakra-ui/react";
 import { useState } from "react";
-import { FaEnvelope, FaEye, FaLock } from "react-icons/fa";
+import { FaEnvelope, FaEye, FaLock, FaTimes } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { signIn } from "../../firebase";
@@ -22,7 +22,7 @@ const Login = () => {
                 navigate("/dashboard")
             }
             else {
-                setError("Login error")
+                setError(result.error)
             }
         })
         .catch(error => setError(error))
@@ -38,9 +38,9 @@ const Login = () => {
 
                     {
                         error !== "" ?
-                        <Alert status="error">
-                            <AlertIcon/>
-                            <AlertDescription>{error}</AlertDescription>
+                        <Alert status="error" display={"flex"} justifyContent={"space-between"} mx="auto" my="30px">
+                            <AlertDescription>{error.replace("Firebase:", "")}</AlertDescription>
+                            <FaTimes onClick={() => setError("")} />
                         </Alert>
                         :
                         ""
@@ -52,7 +52,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaEnvelope />
                             </Button>
-                            <Input type="email" fontSize="14px" defaultValue={"userdemo@gmail.com"} borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)}/>
+                            <Input type="email" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)}/>
                         </Flex>
                     </FormControl>
 
@@ -63,7 +63,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaLock />
                             </Button>
-                            <Input type={(type)? "password": "text"} fontSize="14px" defaultValue={"123456789"} borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
+                            <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
                             <Button p="3" border="1px" borderRadius="0" borderColor="gray.100" bgColor="white" onClick={() => setType(!type)}>
                                 <FaEye />
                             </Button>
@@ -75,7 +75,7 @@ const Login = () => {
                             <Switch size="sm" id="remember" colorScheme="orange" />
                             <FormLabel htmlFor="remember" ms="2" fontSize="12px">Remember me</FormLabel>
                         </FormControl>
-                        <Link w="150px" fontSize="12px" color="red">Forgot password?</Link>
+                        <Link href="/Forgotpassword" w="150px" fontSize="14px" color="red">Forgot password?</Link>
                     </Flex>
 
                     <Button fontSize="14px" borderRadius="2px" border="1px solid brand.900" bgColor="brand.900" color="white" w="100%" mt="6" _hover={{ bgColor: "brand.800" }} onClick={() => handleLogin()}>Login</Button>
