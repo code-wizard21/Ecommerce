@@ -10,10 +10,10 @@ const Footer = () => {
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" p="3">PAGES</Text>
                     
-                    <NavLink navLocation={"Home"} />
-                    <NavLink navLocation={"Shop"} />
-                    <NavLink navLocation={"Cart"} />
-                    <NavLink navLocation={"Wishlist"} />
+                    <NavLink navlocation={"Home"} />
+                    <NavLink navlocation={"Shop"} />
+                    <NavLink navlocation={"Cart"} />
+                    <NavLink navlocation={"Wishlist"} />
 
                 </Box>
 
@@ -21,21 +21,20 @@ const Footer = () => {
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" p="3">SERVICES</Text>
                     
-                    <NavLink navLocation={"Orders"} />
-                    <NavLink navLocation={"History"} />
-                    <NavLink navLocation={"Rewards"} />
-                    <NavLink navLocation={"Profile"} />
-                    <NavLink navLocation={"Settings"} />
+                    <NavLink navlocation={"History"} />
+                    <NavLink navlocation={"Rewards"} />
+                    <NavLink navlocation={"Profile"} />
+                    <NavLink navlocation={"Settings"} />
 
                 </Box>
 
                 
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3">
                     <Text fontWeight="700" p="3">SUPPORTS</Text>
-                    <NavLink navLocation={"Notifications"} />
-                    <NavLink navLocation={"Support"} />
-                    <NavLink navLocation={"Returns"} />
-                    <NavLink navLocation={"Forum"} />
+                    <NavLink navlocation={"Notifications"} />
+                    <NavLink navlocation={"Support"} />
+                    <NavLink navlocation={"Returns"} />
+                    <NavLink navlocation={"Forum"} />
                 </Box>
 
                 <Box w={[ "100%", "50%", "30%", "23%" ]} my="3" px="3">
