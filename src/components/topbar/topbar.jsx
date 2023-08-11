@@ -16,10 +16,6 @@ const Topbar = () => {
         color: "brand.900"
     }
 
-    useEffect(() => {
-        console.log(user)
-    })
-
 
     return (
         <nav>

@@ -19,10 +19,15 @@ const Register = () => {
     const handleRegister = () => {
         signUp(email, password)
         .then(result => {
-            dispatch(userSignup(result.email));
-            navigate("/dashboard")
+            if(result.error) {
+                setError(result.error)
+            }
+            else {
+                dispatch(userSignup({email: result.email, displayName: result.displayName}));
+                navigate("/dashboard")
+            }
         })
-        .catch(error => setError(error))
+        .catch(error => setError(error.error))
     }
 
     return (

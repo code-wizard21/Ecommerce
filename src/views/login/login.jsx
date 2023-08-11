@@ -18,8 +18,8 @@ const Login = () => {
         signIn(email, password)
         .then(result => {
             if(result.email) {
-                dispatch(userLogin(result));
-                navigate("/")
+                dispatch(userLogin({email: result.email, displayName: result.displayName}));
+                navigate("/dashboard")
             }
             else {
                 setError("Login error")
@@ -52,7 +52,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaEnvelope />
                             </Button>
-                            <Input type="email" fontSize="14px" borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)}/>
+                            <Input type="email" fontSize="14px" defaultValue={"userdemo@gmail.com"} borderRadius="0" border="none" onChange={(e) => setEmail(e.target.value)}/>
                         </Flex>
                     </FormControl>
 
@@ -63,7 +63,7 @@ const Login = () => {
                             <Button href="/" bgColor="gray.100" p="3" border="1px" borderRadius="0" borderColor="gray.100">
                                 <FaLock />
                             </Button>
-                            <Input type={(type)? "password": "text"} fontSize="14px" borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
+                            <Input type={(type)? "password": "text"} fontSize="14px" defaultValue={"123456789"} borderRadius="0" border="none" onChange={(e) => setPassword(e.target.value)} />
                             <Button p="3" border="1px" borderRadius="0" borderColor="gray.100" bgColor="white" onClick={() => setType(!type)}>
                                 <FaEye />
                             </Button>
