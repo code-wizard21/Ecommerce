@@ -1,17 +1,17 @@
 import { Avatar, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Text, useDisclosure, Box, Link } from "@chakra-ui/react"
 import { useRef } from "react"
-import { HiMenu, HiMenuAlt3 } from "react-icons/hi";
-import { FiHeart, FiHome, FiShoppingCart } from "react-icons/fi";
+import { HiMenu } from "react-icons/hi";
+import { FiHome, FiShoppingCart } from "react-icons/fi";
 import SearchBar from "../searchbar/searchbar";
 import SocialLinks from "../sociallinks/sociallinks";
 import NavLink from "./navLink";
 import { BiStore } from "react-icons/bi";
-import { FaCog, FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { userLogout } from "../../redux/slice/authSlice";
 import { logOut } from "../../firebase";
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef();
     const user = useSelector(state => state.data.user)
@@ -55,29 +55,29 @@ const Navbar = () => {
 
                         <Box fontSize="15px" my="8" mx="1">
                             <Box fontWeight='600' my="2">
-                                <NavLink navLocation={"Home"}>
+                                <NavLink navlocation={"Home"}>
                                     <FiHome />
                                 </NavLink> 
                             </Box>       
                             <Box fontWeight='600' my="2">
-                                <NavLink navLocation={"Shop"}>
+                                <NavLink navlocation={"Shop"}>
                                     <BiStore />
                                 </NavLink> 
                             </Box>    
                             <Box fontWeight='600' my="2">
-                                <NavLink navLocation={"Cart"}>
+                                <NavLink navlocation={"Cart"}>
                                     <FiHome />
                                 </NavLink> 
                             </Box>        
                             <Box fontWeight="600" my="2">      
-                                <NavLink navLocation={"Wishlist"}>
+                                <NavLink navlocation={"Wishlist"}>
                                     <FiShoppingCart />
                                 </NavLink>
                             </Box>     
                             {
                                 (!user) ? "" :
                                 <Box fontWeight="600" my="2">
-                                    <Box display="flex" navLocation={"Logout"} cursor={"pointer"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
+                                    <Box display="flex" navlocation={"Logout"} cursor={"pointer"} onClick={() => handleLogout()} py="2" alignItems="center" w="100%"  _hover={{ color: "brand.900" }}>
                                         <FaSignOutAlt />
                                         <Text me="3" ml={"10px"} >Logout</Text>
                                     </Box>
