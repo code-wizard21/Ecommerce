@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import logo from "../../assets/imgs/logo.png"
 import { useEffect } from "react";
 import Button from "../button/button";
+import { FaUserCircle } from "react-icons/fa";
 
 const Topbar = () => {
     const location = useLocation().pathname;
@@ -50,7 +51,13 @@ const Topbar = () => {
                         <FiShoppingCart /><Badge color="white" bgColor="brand.900" position="absolute" top="0" right="-5px">{cart.length}</Badge>
                     </Link>
                     
-                    <Button text={(user) ? "Dashboard" : "Login"} href={user? "/dashboard" : "/Login"} />
+                    {
+                        !user ?
+                        <Button text={"Login"} href={"/Login"} />
+                        : 
+                        <Link href="/Dashboard" fontSize={"20px"} opacity={"0.7"}><FaUserCircle /></Link>
+                    }
+                    
                     
                     <Navbar />
                 </Flex>
