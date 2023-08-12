@@ -7,7 +7,7 @@ const Dashboard = () => {
     return (
         <Flex px={[ null, "20px", "5%", "10%" ]} py="5%" minH={"90vh"}>
             <Tabs>
-                <TabList>
+                <TabList px="15px" mx={["auto", "5px"]}>
                     {
                         ["Dashboard", "Orders", "Account", "Notifications"].map((tab, i) => (
                             <Tab key={i}>{tab}</Tab>
