@@ -3,6 +3,7 @@
 
  A React js ecommerce website.
 <hr>
+
 ![motara~2](https://github.com/abel-otegbola/Ecommerce/assets/59369762/06eca810-8539-473b-ac03-31036681db06)
 
 visit live site [here](https://motara.netlify.app)
