@@ -24,11 +24,11 @@ const Cart = () => {
             <Heading mainText={"MY CART"} subText={"Finish up the order and get a reward."} />
 
             <Flex flexWrap="wrap">
-                <Box w={["100%", "100%", "60%"]} fontSize="14px" >
-                    <Box p="20px" bgColor="#f3f3f3">
-
+                <Box w="100%" fontSize="14px" >
+                    <Flex flexWrap={["wrap", "no-wrap"]} align={"flex-start"} bgColor={"#f3f3f3"} my="10px">
+                        <Box w={[ "100%", "100%", "60%" ]} >
                         {
-                            cart && (cart.length === 0) ? <Text p="30px" bgColor="white">Your Cart is empty. Add products from the <Link href="/shop" color="brand.900">Shop</Link></Text> :
+                            cart && (cart.length === 0) ? <Text p="30px" minH="30vh"bgColor="white">Your Cart is empty. Add products from the <Link href="/shop" color="brand.900">Shop</Link></Text> :
                             cart.map(product => { 
                                 return (
                                 
@@ -49,9 +49,10 @@ const Cart = () => {
                                 )
                             })
                         }
+                        </Box>
 
-                        <Box justify="space-between" p="10px 0" >
-                            <Flex p="3" pt="5%"><Text>Have a coupon code? Enter here </Text> <Text color="brand.900" p="5px 10px"><FaHandPointDown /></Text></Flex>
+                        <Box p="10px" w={["100%", "100%", "40%"]} >
+                            <Flex p="3"><Text>Have a coupon code? Enter here </Text> <Text color="brand.900" p="5px 10px"><FaHandPointDown /></Text></Flex>
                             <Flex align="center" w="100%" p="2px" mb="5%" border="1px" bgColor="white" borderColor="gray.100" borderRadius="0">
                                 <Input placeholder="Enter code" fontSize="14px" borderRadius="0" />
                                 <Button href="/" bgColor="gray.100" fontSize="14px" p="12px 25px" border="1px" borderColor="gray.100" borderRadius="0">
@@ -78,18 +79,15 @@ const Cart = () => {
                                 <Text>Total:</Text>
                                 <Text as="b" fontSize="20px" color="brand.900">${(subTotal + 50.90) / 2 }</Text>
                             </Flex>
+                            <Flex m="20px 0" bgColor="white" p="10px">
+                                <Link href="/checkout" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="brand.900">Checkout now</Link>
+                            </Flex>
                         </Box>
                         
-                        <Flex m="20px 0" bgColor="white" p="10px">
-                            <Link href="/checkout" p="12px" w="100%" textAlign="center" borderRadius="2px" color="white" bgColor="brand.900">Checkout now</Link>
-                        </Flex>
 
-                    </Box>
+                    </Flex>
                 </Box>
 
-                <Box w={["100%", "100%", "36%"]} border="1px solid #f4f4f4" fontSize="14px" p="20px" mx="2%" >
-                    <Text fontWeight="700" fontSize="18px" mb="3" color="brand.900">ORDER NOW</Text>
-                </Box>
             </Flex>
         </Box>
     )
